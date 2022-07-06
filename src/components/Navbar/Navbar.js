@@ -1,5 +1,5 @@
 import React from 'react'
-import './Navbar.css'
+import './Nav.css'
 import logo from '../../images/bg1/hospital-logo.png'
 import $ from 'jquery';
 
@@ -22,7 +22,7 @@ function hamburger(){
 }
 
 $(document).ready(function(){
-  $('#nav-icon1').click(function(){
+  $('#nav-hamburger').click(function(){
     $(this).toggleClass('open');
   });
 });
@@ -46,11 +46,11 @@ const Navbar = () => {
                 <div id="news" className='navComponents'>News</div>
             </div>
             <div className="right">
-            <div id="nav-icon1" onClick={hamburger}>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+                <div id="nav-hamburger" >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
             </div>
         </div>
     </>

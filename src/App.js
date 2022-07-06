@@ -9,7 +9,7 @@ function App() {
         <Navbar/>
         <Back1 />
         <Back2 />
-        <WorkingProcess />
+        {/* <WorkingProcess /> */}
     </>
   );
 }
