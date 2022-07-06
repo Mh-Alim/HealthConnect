@@ -1,0 +1,104 @@
+
+#WorkingProcessMainContainer{
+    margin-top: 30px;
+    height: 100vh;
+    width: 100%;
+}
+.h6{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAASBAMAAABlZ9nIAAAAGFBMVEUAAADxdzLxdzLxdzLxdzLxdzLxdzLxdzKwbUUiAAAACHRSTlMAJQghGR0UD71uIrEAAABJSURBVAjXJcjBDYAgFATRQSPn/WriVTqgBOxAS7AD+j+xCZlkDg+iwRLAdnjp8n4xHfuN/cUul0UjyVoEfNWLDjmA9fTK7j2VAcLzBK44KxdZAAAAAElFTkSuQmCC');
+    width: fit-content;
+    margin: 5px auto;
+    color: #f38f5e;;
+}
+.h6 > h4{
+    font-size: 1.4em;
+    padding: 9px 13px;
+    margin: 0;
+}
+
+.workHeadingText{
+    width: fit-content;
+    margin: 0px auto;
+    font-size: 1.7em;
+    margin-top: 0px;
+    padding-top: 0px;
+    color: #1f2278;
+
+}
+.workHeadingText > h2{
+    margin: 0;
+    margin-bottom: 43px;
+}
+
+.workCards{
+    display: flex;
+    justify-content: space-evenly;
+
+    max-width: 100%;
+    max-height: 50vh;
+
+}
+
+.workCards>.card{
+    
+    width: 20vw;
+    height: 60vh;
+    padding: 20px;
+
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.num{
+    margin-top: 20px;
+    transition: all .5s;
+    z-index: 9;
+    font-size: 5vw;
+    font-weight: 900;
+    margin-bottom: 30px;
+    line-height: 80px;
+    -webkit-text-stroke: 2px #f17732;
+    text-shadow: 0 10px 0 #ffe3d3;
+    color: transparent;
+}
+
+.cardTextSubHeading{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 1.6vw;
+    color:#f17732 ;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+}
+.cardHeading{
+    font-size: 1.3vw;
+    margin-bottom: 32px;
+}
+
+.cardButton{
+    display: inline-block;
+    padding: 10px 15px;
+    color: #565acf;
+    background-color: #e1e2f6;
+    border-radius: 7px;
+    border: 2px solid #e1e2f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.cardButton > div{
+    margin: 0px 10px;
+}
+.right-angle{
+    font-size: 30px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: white;
+
+}

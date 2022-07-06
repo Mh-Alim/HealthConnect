@@ -1,0 +1,122 @@
+
+
+#bg2{
+    width: 100%;
+    min-height: 100vh;
+/* 
+    background: #C02425; 
+background: -webkit-linear-gradient(to right, #F0CB35, #C02425); 
+background: linear-gradient(to right, #F0CB35, #C02425);  */
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+z-index: 0;
+background: #5559ce;
+}
+
+
+#bg2::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    clip-path: circle(119% at 5% -23%);
+    z-index: -1;
+  }
+#bg2::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #15cb7c;
+    clip-path: circle(126% at -63% -71%);
+    z-index: -1;
+  }
+
+
+.bg2-subContainer{
+    width: 70vw;
+    min-height: 70vh;
+    border: 2px solid red;
+    margin: auto auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* glassmorphis */
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+
+}
+
+.drImg{
+    width: 50%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.drImg img{
+    max-width: 70%;
+    max-height: 100%;
+}
+.bg2-txt{
+    width: 50%;
+    height: 100%;
+    font-size: 1rem;
+    margin: 0vh 4vh;
+    /* font-family: 'Brush Script MT', cursive; */
+    font-weight: 500;
+
+}
+
+.bg2About{
+    font-size: 3vw;
+    /* margin-bottom: 4vh; */
+    text-align: center;
+    /* text-shadow: 0 0 3px #5559ce, 0 0 5px #5559ce; */
+    color: black;
+    font-weight: 500;
+    color: #5559ce;
+}
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #5559ce;
+  }
+  
+  ::selection {
+    color: white;
+    background: #5559ce;
+  }
+
+
+@media screen and (max-width:890px) {
+    .bg2-subContainer{
+        flex-direction: column;
+    }
+    .drImg {
+        width: 100%;
+        min-height: 50%;
+    }
+    .bg2-txt {
+        width: 100%;
+        height: 100%;
+        font-size: 1rem;
+        margin: 0vh 0vh;
+    }
+    .bg2AboutWrite{
+        padding: 0 40px;
+        font-size: 2.2vw;
+    }
+}
+
