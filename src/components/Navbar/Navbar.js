@@ -1,5 +1,5 @@
 import React from 'react'
-import './Nav.css'
+import './Navbar.css'
 import logo from '../../images/bg1/hospital-logo.png'
 import $ from 'jquery';
 
