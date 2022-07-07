@@ -19,15 +19,21 @@ const WorkingProcess = () => {
             </div>
             <div id="card2" className='card'>
                 <div className="num">02</div>
-                <div className="cardTextSubHeading">Make Appointmnet</div>
-                <div className="cardHeading">It is a long established fact that a reader will be distracted by the readable content of.</div>
-                <div className="cardButton">Take Appointment</div>
+                <div className="cardTextSubHeading">Payment</div>
+                <div className="cardHeading">After Register you have to pay the then you are fully Register</div>
+                <div className="cardButton">
+                <div>Pay</div> 
+                <MDBIcon icon="angle-right" className='right-angle' />
+                </div>
             </div>
             <div id="card3" className='card'>
                 <div className="num">03</div>
-                <div className="cardTextSubHeading"> <strong>Make Appointmnet</strong> </div>
-                <div className="cardHeading">It is a long established fact that a reader will be distracted by the readable content of.</div>
-                <div className="cardButton">Take Appointment</div>
+                <div className="cardTextSubHeading">Date of Checkup </div>
+                <div className="cardHeading">Come at the day of you checkup </div>
+                <div className="cardButton">
+                <div>see</div>
+                <MDBIcon icon="angle-right" className='right-angle' />
+                </div>
             </div>
         </div>
     </div>
