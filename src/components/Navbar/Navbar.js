@@ -1,5 +1,6 @@
 import React from 'react'
 import './Navbar.css'
+import {NavLink} from "react-router-dom"
 import logo from '../../images/bg1/hospital-logo.png'
 import $ from 'jquery';
 
@@ -38,15 +39,15 @@ const Navbar = () => {
               <img src={logo} alt="logo" />
               </div>
             <div className="mid" id='navText'>
-                <div id="about" className='navComponents'> About </div>
-                <div id="our-client" className='navComponents'>Clients</div>
-                <div id="contact" className='navComponents'>Contact</div>
-                <div id="appointment" className='navComponents'>Take Appointment</div>
-                <div id="queue" className='navComponents'>Todays Appointmets Lists</div>
-                <div id="news" className='navComponents'>News</div>
+                <div id="about" className='navComponents'> <NavLink to="/about">About</NavLink>   </div>
+                <div id="our-client" className='navComponents'><NavLink to="/clients">Clients</NavLink></div>
+                <div id="contact" className='navComponents'><NavLink to="/contact">Contact</NavLink></div>
+                <div id="appointment" className='navComponents'><NavLink to="/take-appointment">Take Appointment</NavLink></div>
+                <div id="queue" className='navComponents'><NavLink to="/appointments">Todays Appointmets Lists</NavLink></div>
+                <div id="news" className='navComponents'><NavLink to="/News">News</NavLink></div>
             </div>
             <div className="right">
-                <div id="nav-hamburger" >
+                <div id="nav-hamburger" onClick={hamburger} >
                     <span></span>
                     <span></span>
                     <span></span>

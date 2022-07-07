@@ -3,7 +3,7 @@
 
 
 
-.navbar{
+#navbar{
     
     height: 10vh;
    /* background-color: rebeccapurple; */
@@ -21,10 +21,10 @@
     font-family: 'Titan One', cursive;
     font-weight: 300; 
     
-    position: fixed;
     width: 100vw;
     background-color: transparent;
     color: black;
+    position: fixed;
     z-index: 1000;
 }
 .mid{
@@ -136,13 +136,14 @@
 
 
 @media only screen and (max-width:700px) {
-    .navbar{
-      height: 100vh;
-      align-items: flex-start;
-    }
-    #nav-hamburger{
+      #nav-hamburger{
         display: block;
     }
+  #navbar{
+      align-items: flex-start;
+      height: 100vh;
+    }
+   
     .mid{
       flex-direction: column;
     }
@@ -156,5 +157,11 @@
     .right{
       top: 10px;
     }
-    
+
+    #nav-hamburger{
+      margin-top: 100px;
+    }
+    #about{
+      margin-top: 20vh;
+    }
 }
