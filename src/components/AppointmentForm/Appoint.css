@@ -1,0 +1,18 @@
+#Appoint{
+    background-color: aqua;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appoinForm{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mobImgWomen{
+    width: 50%;
+}

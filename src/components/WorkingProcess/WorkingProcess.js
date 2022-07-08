@@ -1,41 +1,48 @@
 import React from 'react'
 import './WorkingProcess.css'
-import { MDBIcon} from 'mdbreact';
+// import { MDBIcon} from 'mdbreact';
+import { NavLink } from "react-router-dom"
 
 const WorkingProcess = () => {
   return (
     <div id='WorkingProcessMainContainer'>
         <div className="h6"><h4>Working Process</h4></div>
         <div className="workHeadingText"><h2>How we works?</h2></div>
-        <div className="workCards">
-            <div id="card1" className='card'>
-                <div className="num">01</div>
-                <div className="cardTextSubHeading">Make Appointmnet</div>
-                <div className="cardHeading">To take Appointment online you just have to click on below button or navbar take appointment and fill form.</div>
-                <div className="cardButton">
-                <div>Appointment</div>
-                <MDBIcon icon="angle-right" className='right-angle' />
+        {/* cards starts from here */}
+        <div className="cardBody">
+
+       
+        <div class="container">
+                    <div class="card">
+                        <div class="content">
+                            <h2>01</h2>
+                            <h3>STEP-1</h3>
+                            <p>Click on the below button to take appointment or you can also click on the Take appointment button on the navbar </p>
+                            <NavLink to =  "#">Read More</NavLink>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div id="card2" className='card'>
-                <div className="num">02</div>
-                <div className="cardTextSubHeading">Payment</div>
-                <div className="cardHeading">After Register you have to pay the then you are fully Register</div>
-                <div className="cardButton">
-                <div>Pay</div> 
-                <MDBIcon icon="angle-right" className='right-angle' />
+                <div class="container">
+                    <div class="card">
+                        <div class="content">
+                            <h2>02</h2>
+                            <h3> STEP-2 </h3>
+                            <p>Click on the below button for online fee paymnet </p>
+                            <NavLink to =  "#">Read More</NavLink>
+                        </div>
+                    </div>
                 </div>
+                <div class="container">
+                    <div class="card">
+                        <div class="content">
+                            <h2>03</h2>
+                            <h3>Card Three</h3>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque, incidunt omnis. Similique odio facilis perferendis rem exercitationem maxime officiis inventore totam beatae corporis quia ut dicta accusamus temporibus</p>
+                            <NavLink to =  "#">Read More</NavLink>
+                        </div>
+                    </div>
+                </div> 
             </div>
-            <div id="card3" className='card'>
-                <div className="num">03</div>
-                <div className="cardTextSubHeading">Date of Checkup </div>
-                <div className="cardHeading">Come at the day of you checkup </div>
-                <div className="cardButton">
-                <div>see</div>
-                <MDBIcon icon="angle-right" className='right-angle' />
-                </div>
-            </div>
-        </div>
     </div>
   )
 }

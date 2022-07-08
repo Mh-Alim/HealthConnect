@@ -141,7 +141,11 @@
     }
   #navbar{
       align-items: flex-start;
-      height: 100vh;
+      height: 10vh;
+    }
+
+    #navText{
+      display: none;
     }
    
     .mid{

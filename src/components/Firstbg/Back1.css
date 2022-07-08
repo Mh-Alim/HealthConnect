@@ -148,7 +148,7 @@ body::before{
 }
 .flexRow{
     position: absolute; 
-    top: 20vh;
+    top: 30vh;
     left: 3vw;  
     display: flex;
     flex-direction: row;
@@ -171,16 +171,23 @@ body::before{
 @media screen and (max-width:700px){
    .flexRow{
     flex-direction: column;
-    top: 12vh;
+    top: 18vh;
     left: 1vh;
 
+   }
+   .inline{
+    font-size: 2vw;
+   }
+
+   .docImg{
+    width: 45%;
    }
    .bg1-txt1{
     padding: 0px;
    }
    .txtCentre {
 
-    font-size: 1.5vw;
+    font-size: 2.5vw;
     }
    .bg1 .container{
     margin-top: 30px;
