@@ -1,0 +1,159 @@
+#Profile{
+    height: 100vh;
+    font-family: 'Montserrat',sans-serif;
+    padding-top: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 6rem;
+    /* background-color: red; */
+}
+
+.innerProfile{
+    padding: 2rem 2rem;
+    border: 2px solid #3E78D8;
+    border-radius: 10px;
+
+    background: rgba( 255, 255, 255, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.profileImg{
+    width: 25vw;
+
+    height: 25%;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-left: 20px;
+}
+
+.profileHeading{
+    text-align: center;
+}
+
+
+
+.contentBasicInfo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@media screen and (min-width: 480px) {
+    .profileImg{
+        width: 20vw;
+    }
+}
+@media screen and (min-width: 600px) {
+    .profileImg{
+        width: 16vw;
+    }
+}
+@media screen and (min-width: 770px) {
+    .profileImg{
+        width: 12vw;
+    }
+
+  
+}
+
+@media screen and (min-width: 985px) {
+    .profileImg{
+        width: 7rem;
+    }  
+    #Profile{
+        padding-left: 25vw;
+        padding-right: 25vw;
+    }
+}
+.contentBasicInfo{
+    
+    margin-top: 2rem;
+    display: flex;
+}
+.contentBasicInfoText{
+    margin-top: 4px;
+    
+}
+.key{
+    margin-right: 10px;
+}
+.hline{
+    
+    height: 1px;
+    background-color: #3E78D8;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+
+.profileHeading{
+    padding-left: 4px;
+    /* margin-bottom: 4px; */
+}
+
+
+
+/* contact information  */
+
+.contentContactInfoText{
+    margin-top: 2rem;
+}
+
+
+
+
+.contentContactInfoText{
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+}
+.contentBasicInfoText{
+    /* margin-left: 4rem; */
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+}
+.personalInfoText{
+    margin-top: 2rem;
+    padding-right: 10rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width : 400px) {
+    .contentBasicInfo{
+        flex-direction: column-reverse;
+    }
+    .profileImg{
+        margin-bottom: 2rem;
+        margin-left: 0;
+    }
+   
+    .contentContactInfoText{
+        margin-left: 4rem;
+    }
+
+    .key{
+        padding-right: 4vw;
+    }
+    #cemail{
+       width: 80%;
+       overflow-x:scroll;
+
+    }
+
+    .personalInfoText {
+        padding-right: 2rem;
+        
+    }
+}
+
+.editInfo{
+    text-align: center;
+    margin-top: 3rem;
+
+}

@@ -1,0 +1,12 @@
+.login-heading{
+    border-bottom: 2px solid black;
+}
+
+/* .login-background{
+    background: var(--blue-color);
+} */
+
+#signin{
+    padding-top: 5rem;
+    background: var(--blue-color);
+}

@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Caudex:wght@700&family=Caveat+Brush&family=Coiny&family=Comfortaa:wght@600&family=Fredoka&family=Heebo:wght@681&family=Londrina+Outline&family=Montserrat:ital,wght@1,200&family=Nunito:wght@300&family=Oxygen&family=Poppins:wght@300&family=Praise&family=Roboto:wght@500&family=Share:ital,wght@1,400;1,700&family=Titan+One&display=swap');
 
-
+body{
+  box-sizing: border-box;
+}
 
 
 #navbar{
@@ -168,4 +170,34 @@
     #about{
       margin-top: 20vh;
     }
+}
+
+
+@media screen and (max-width: 400px){
+
+  #navbar{
+    height: 7vh;
+  }
+  #nav-hamburger{
+    margin-top: 3.6rem;
+  }
+
+  #nav-hamburger span {
+    height: 2px;
+    width: 80%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+  
+  }
+
+  .left{
+    width: 20%;
+  }
+  .left img{
+      height: 35px;
+      margin-left: 20px;
+      margin-top: -5px;
+  }
+  
 }

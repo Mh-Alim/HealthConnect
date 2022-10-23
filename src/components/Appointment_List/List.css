@@ -1,0 +1,128 @@
+#AppointmentList{
+    padding-top: 6rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 6rem;
+    background: var(--indigo);
+    min-height: 100vh;
+    font-family: 'Poppins',sans-serif;
+
+}
+
+.innerList{
+    /* padding: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; */
+}
+
+
+.cp{
+    margin: 0;
+    color: var(--white-text-color);
+
+}
+.appointmentNo{
+
+}
+#heading_email{
+    margin-right: 6rem;
+}
+
+/* #heading_email{
+    margin-right: 10rem;
+}
+#heading_name{
+    margin-right: 5rem;
+}
+#heading_appointment_no{
+
+} */
+
+.userImg{
+
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin: 1rem 0;
+
+
+    background: rgba( 255, 255, 255, 0.05 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.listText{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.userImg img{
+     width: 5%;
+    border-radius: 100%;
+    margin-right: 1rem; 
+}
+
+
+@media screen and (max-width: 700px) {
+    #AppointmentList{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .innerList{
+        border-radius: 5px;
+        /* display: flex; */
+        /* flex-direction: column; */
+    }
+    
+    
+    .cp{
+        
+    }
+    .appointmentNo{
+        
+    }
+    .listText{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width:50%;
+        text-align: left;
+    
+    }
+    .userImg{
+        display: flex;
+        justify-content: space-around;
+        margin: 1rem 0;
+        padding: 1rem 1rem;
+
+        /* glassmorphism generator  */
+        background: rgba( 255, 255, 255, 0.05 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+    .userImg img{
+        width: 20%;
+        margin-right: 1rem;
+    }
+    
+    .userEmail{
+    
+    }
+    
+    .userName{
+    
+    }
+}       
+
+
+@media screen and (min-width: 700px) {
+    
+}

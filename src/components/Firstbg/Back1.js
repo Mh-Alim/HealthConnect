@@ -23,7 +23,7 @@ const Back1 = () => {
                   <h4 className='inline'>Doctor of Medicine || Bachelor of Science in Biology</h4>
                 </div>
                 <div className="container">
-                    <div className="btn" >Say Hii</div>
+                    <div className="back-btn" >Say Hii</div>
                 </div>
               </div>
             <div className="square"><img src={sq} alt="" /></div>

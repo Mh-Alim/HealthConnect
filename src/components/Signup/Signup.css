@@ -1,0 +1,40 @@
+.gradient-custom-3 {
+    /* fallback for old browsers */
+   
+  }
+  
+  .gradient-custom-4 {
+
+    background: var(--blue-color);
+    /* background: #84fab0;
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1)) */
+  }
+  
+
+  .card{
+    margin: 9rem 0;
+  }
+
+  .signup-heading{
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 2px solid black;
+    
+  }
+
+  #signup{
+    background: var(--blue-color);
+  }
+  #signup_card{
+    min-width: 40%;
+    margin-top: 7rem;
+  }
+
+  .bg-image{
+    padding-top: 5rem;
+  }
+  @media screen and (max-width: 400px) {
+    #signup_card{
+      min-width: 96%;
+    }
+  }

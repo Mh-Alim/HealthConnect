@@ -12,7 +12,8 @@ justify-content: center;
 align-items: center;
 position: relative;
 z-index: 0;
-background: #5559ce;
+background: var(--indigo);
+font-family: 'Poppins',sans-serif;
 }
 
 
@@ -34,14 +35,14 @@ background: #5559ce;
     right: 0;
     width: 100%;
     height: 100%;
-    background: #15cb7c;
+    background: var(--green-color);
     clip-path: circle(126% at -63% -71%);
     z-index: -1;
   }
 
 
 .bg2-subContainer{
-    width: 70vw;
+    width: 90vw;
     min-height: 70vh;
     border: 2px solid red;
     margin: auto auto;
@@ -65,6 +66,7 @@ background: #5559ce;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .drImg img{
     max-width: 70%;
@@ -87,16 +89,16 @@ background: #5559ce;
     /* text-shadow: 0 0 3px #5559ce, 0 0 5px #5559ce; */
     color: black;
     font-weight: 500;
-    color: #5559ce;
+    color: var(--indigo);
 }
 ::-moz-selection { /* Code for Firefox */
     color: white;
-    background: #5559ce;
+    background: var(--indigo);
   }
   
   ::selection {
     color: white;
-    background: #5559ce;
+    background: var(--indigo);
   }
 
 
@@ -117,6 +119,27 @@ background: #5559ce;
     .bg2AboutWrite{
         padding: 0 40px;
         font-size: 2.2vw;
+    }
+}
+
+ 
+@media screen and (max-width: 400px) {
+    
+    .bg2AboutWrite{
+        font-size: 0.7rem;
+    }
+
+    .bg2About{
+        font-size: 1.5rem;
+    }
+}
+
+
+ 
+@media screen and (max-width: 340px) {
+    
+    #bg2{
+        height: 120vh;
     }
 }
 
