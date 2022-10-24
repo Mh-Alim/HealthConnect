@@ -30,7 +30,7 @@ const Signup = () => {
   const onSubmitRegister = async(e)=>{
       e.preventDefault();
       const {name,phone,email,password,cpassword} = user;
-      const res = await fetch("/register", {
+      const res = await fetch("/api/register", {
         method : "POST",
         headers: {
           "Content-Type" : "application/json"

@@ -176,7 +176,7 @@ body{
 @media screen and (max-width: 400px){
 
   #navbar{
-    height: 7vh;
+    height: 3rem;
   }
   #nav-hamburger{
     margin-top: 3.6rem;

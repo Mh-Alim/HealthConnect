@@ -16,7 +16,7 @@ function hamburger(){
   if(nav.style.height === '100vh') {
 
     if(window.innerWidth <= 400){
-      nav.style.height = '7vh';
+      nav.style.height = '3rem';
     }
     else {
       nav.style.height = '10vh';
