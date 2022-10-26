@@ -56,12 +56,13 @@ const Appoint = () => {
       console.log(resFromServerInJson);
 
       if(resFromServer.status === 401){
-        window.alert("login before appointment");
+
+        window.alert(resFromServerInJson.message);
       }
-      if(resFromServer.status === 422 || !resFromServer){
+      else if(resFromServer.status === 422 || !resFromServer){
         // window.alert("login before appointment");
-        window.alert("Their is error in Appointment now. Try again  ");
-        console.log("Their is error in Appointment now. Try again later");
+        window.alert(resFromServerInJson.message);
+        console.log(resFromServerInJson.message);
       }
       else {
         window.alert("Appointment successfull");

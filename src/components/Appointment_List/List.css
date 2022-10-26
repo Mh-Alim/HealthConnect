@@ -123,6 +123,16 @@
 }       
 
 
-@media screen and (min-width: 700px) {
-    
+@media screen and (max-width: 407px) {
+    .listText{
+        width: 70%;
+        overflow-x: scroll;
+    }
+}
+@media screen and (max-width: 334px) {
+    .listText{
+        width: 80%;
+        overflow-x: scroll;
+        padding-right: 0.5rem;
+    }
 }

@@ -18,11 +18,17 @@ const List = () => {
                 
                 
             });
-            console.log(resFromServer);
-            if(!resFromServer.status === 200) throw new Error("No one Has taken Appointment")
+            // console.log(resFromServer);
+            
 
-            const data = await resFromServer.json();
-            setUser(data);
+            const resFromServerInJson = await resFromServer.json();
+            console.log(resFromServerInJson);
+            if(resFromServer.status == 401){
+                window.alert(resFromServerInJson.message);
+                navigate("/login");
+            }
+
+            setUser(resFromServerInJson);
             console.log(user);
 
         }
