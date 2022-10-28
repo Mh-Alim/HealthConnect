@@ -2,8 +2,11 @@
     /* margin: 5rem; */
     font-family: "montserrate",sans-serif;
     width: 100%;
+    /* display: flex; */
 }
-
+.flex{
+    display: flex;
+}
 
 .testimonials {
     
@@ -56,6 +59,10 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 
 }
 
+.inner #for_pass_container{
+    height: 70vh;
+}
+
 .testimonials img{
     border-block-end-width: 100px;
     height: 100px;
@@ -101,7 +108,11 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 
 @media screen and (max-width: 400px) {
     
-
+    #for_pass_container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
     .review_para{
         font-size: 1rem;
     }
@@ -111,5 +122,17 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     }
     .name{
         font-size: 1.5rem;
+    }
+}
+
+
+#review{
+    height: 6rem;
+}
+
+@media screen and (max-width : 325px){
+    .card .px-5{
+        padding-right: 0;
+        padding-left: 0;
     }
 }

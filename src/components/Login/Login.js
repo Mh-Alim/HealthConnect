@@ -67,7 +67,7 @@ const Login = () => {
               <MDBInput wrapperClass='mb-4 mx-5 w-100' labelClass='text-dark' label='Email address' id='formControlLg' type='email' value={email} onChange={(e) => setEmail(e.target.value)} size="lg"/>
               <MDBInput wrapperClass='mb-4 mx-5 w-100' labelClass='text-dark' label='Password' id='formControlLg' type='password' value={password} onChange={(e) => setPassword(e.target.value)} size="lg"/>
 
-              <p className="small mb-3 pb-lg-2"><a class="text-dark-50" href="#!">Forgot password?</a></p>
+              <p className="small mb-3 pb-lg-2"><NavLink class="text-dark-50" to="/forgot_password">Forgot password?</NavLink></p>
               {/* <MDBBtn outline style={{backgroundColor: '#dd4b39'}} className='mx-2 px-5' color='black' size='lg'>
                 Login
               </MDBBtn> */}

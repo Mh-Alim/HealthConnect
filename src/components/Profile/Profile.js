@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState,useRef} from 'react'
 import {NavLink, useNavigate} from "react-router-dom"
 import "./Profile.css"
 import userImg from "../../images/user.jpg"
@@ -6,13 +6,15 @@ import userImg from "../../images/user.jpg"
 const Profile = () => {
 
 const [userData, setUserData] = useState({});
+const initial = useRef(false);
+const [appointData, setAppointData] = useState({})
   const navigate = useNavigate();
 
 
   const callAboutPage = async () => {
 
     try{
-      const res = await fetch("/api/profile1",{
+      const res = await fetch("/api/profile",{
         method: "GET",
         headers: {
           Accept : "application/json",
@@ -23,6 +25,12 @@ const [userData, setUserData] = useState({});
 
       
       const data = await res.json();
+
+      if(res.status === 401){
+        window.alert(data.message);
+        navigate("/login")
+      }
+      
       setUserData(data);
       // console.log(data);
 
@@ -37,8 +45,11 @@ const [userData, setUserData] = useState({});
     
   }
   useEffect(() => {
-    
+    if(!initial.current){
+      initial.current=true;
     callAboutPage();
+
+    }
     
   }, []);
   
@@ -57,8 +68,8 @@ const [userData, setUserData] = useState({});
                   </div>
                   <div className="value">
                     <p>{userData.name}</p>
-                    <p> -- </p>
-                    <p> -- </p>
+                    <p> { userData.dob ? userData.dob : "--" } </p>
+                    <p> { userData.gender ? userData.gender : "--" } </p>
                   </div>
                 </div>
                 <img className='profileImg' src={userImg} alt="" />
@@ -73,12 +84,12 @@ const [userData, setUserData] = useState({});
                   <div className="key">
                     <p>Phone</p>
                     <p >Email</p>
-                    <p>Adddress</p>
+                    <p>Address</p>
                   </div>
                   <div className="value">
                     <p>{userData.phone}</p>
                     <p id='cemail'>{userData.email}</p>
-                    <p> -- </p>
+                    <p> { userData.address ? userData.address : "--" } </p>
                   </div>
                   {/* <p> <span className='key'>Phone</span> <span className='value'>7748070763</span> </p>
                   <p> <span className='key'>Email</span> <span className='value'>smasoon7789@gmail.com</span> </p>
@@ -95,8 +106,8 @@ const [userData, setUserData] = useState({});
                     <p>Weight</p>
                   </div>
                   <div className="value">
-                    <p>--</p>
-                    <p>--</p>
+                    <p> { userData.height ? userData.height : "--" }</p>
+                    <p>{ userData.weight ? userData.weight : "--" }</p>
                   </div>
               </div>
             </div>

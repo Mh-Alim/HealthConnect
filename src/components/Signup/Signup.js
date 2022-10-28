@@ -43,17 +43,17 @@ const Signup = () => {
       // backend se i am getting data just check this line of code
       const data = await res.json();
       console.log(data);
-      if(res.status === 422 || !data){
-        window.alert("Invalid Registration");
-        console.log("Invalid Registration");
-      }
-      else {
-        window.alert("Registration Successfull");
-        console.log("Registration Successfull");
-        navigate("/login");
-      }
+      // if(res.status === 422 || !data){
+      //   window.alert("Invalid Registration");
+      //   console.log("Invalid Registration");
+      // }
+      // else {
+      //   window.alert("Registration Successfull");
+      //   console.log("Registration Successfull");
+      //   navigate("/login");
+      // }
 
-    
+      window.alert(data.message);
   }
 
   return (

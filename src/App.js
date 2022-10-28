@@ -14,6 +14,9 @@ import HomeReview from './components/ReviewSlider/HomeReview';
 import Profile from './components/Profile/Profile';
 import List from './components/Appointment_List/List';
 import EditProfile from './components/Profile/EditProfile';
+import ForgotPassword from './components/Forgot_Password/ForgotPassword';
+import OTP from './components/Forgot_Password/OTP';
+import ResetPassword from './components/Forgot_Password/ResetPassword';
 
 function App() {
   return (
@@ -40,6 +43,9 @@ function App() {
                 <Route exact path='/profile' element = { <Profile />  } />
                 <Route exact path='/lists' element = { <List />  } />
                 <Route exact path='/editprofile' element = { <EditProfile />  } />
+                <Route exact path='/forgot_password' element = { <ForgotPassword />  } />
+                <Route exact path='/reset-password' element = { <ResetPassword />  } />
+                <Route exact path='/otp' element = { <OTP />  } />
                 <Route element= {<Error/>} />
               </Routes>
               {/* <Review /> */}
