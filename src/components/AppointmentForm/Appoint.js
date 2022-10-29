@@ -29,8 +29,22 @@ const Appoint = () => {
   const submitAppointment = async(e)=>{
       e.preventDefault();
       const name = fname.current.value.concat(" ",lname.current.value);
-      let gender = "male";
-      
+     
+     
+
+
+      // gender calculation
+
+
+      let allGenders = document.getElementsByName("inlineRadioOptions");
+      let gender;
+      for(var i = 0;i<allGenders.length;i++){
+        if(allGenders[i].checked){
+          gender = allGenders[i].value;
+        }
+      }
+
+     
 
       const resFromServer = await fetch("/api/appointment", {
         method : "POST",
@@ -134,16 +148,16 @@ const Appoint = () => {
           {/* Radio Button (Male Female Button) */}
           
           <div className="form-check form-check-inline mt-4 ml-3 col-3">
-            <input className="radioForm" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" ref={male}/ >
+            <input className="radioForm" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male" ref={male}/ >
             <label style={{"cursor":"pointer"}} className="form-check-label"htmlFor="inlineRadio1">Male</label>
           </div>
           <div className="form-check form-check-inline mt-4  col-3" id='femaleOption'>
-            <input className="radioForm" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" ref={female} />
+            <input className="radioForm" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female" ref={female} />
             <label style={{"cursor":"pointer"}} className="form-check-label"htmlFor="inlineRadio2">Female</label>
           </div>
         
           <div  className="form-check form-check-inline mt-4  col-3">
-            <input className="radioForm" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option2" ref={otherGender} />
+            <input className="radioForm" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="other" ref={otherGender} />
             <label style={{"cursor":"pointer"}} className="other form-check-label"htmlFor="inlineRadio3">Other</label>
           </div>
           <div id='appointment_btn' className="col-12 mt-3">

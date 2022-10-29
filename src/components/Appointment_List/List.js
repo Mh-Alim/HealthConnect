@@ -38,8 +38,13 @@ const List = () => {
         }
         
     }
+
+    let initial = true;
     useEffect(() => {
-      makeList();
+      if(initial){
+        makeList();
+        initial = false;
+      }
     }, [])
     
 
