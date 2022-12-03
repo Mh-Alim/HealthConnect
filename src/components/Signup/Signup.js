@@ -29,14 +29,17 @@ const Signup = () => {
 
   const onSubmitRegister = async(e)=>{
       e.preventDefault();
-      const {name,phone,email,password,cpassword} = user;
+      /// rm phone
+      const {name,email,phone,password,cpassword} = user;
       const res = await fetch("/api/register", {
         method : "POST",
         headers: {
           "Content-Type" : "application/json"
         },
         body : JSON.stringify({
-          name,phone,email,password,cpassword
+
+          // rm phone
+          name,email,phone,password,cpassword
         })
       })
 

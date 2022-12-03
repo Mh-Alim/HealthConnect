@@ -14,13 +14,13 @@ const Appoint = () => {
   const lname = useRef("");
   const phone = useRef("");
   const email = useRef("");
-  const password = useRef("");
+  const dob = useRef("");
   const bgroup = useRef("");
   const city = useRef("");
   const state = useRef("");
   const zip = useRef("");
   const address1 = useRef("");
-  const address2 = useRef("");
+  // const address2 = useRef("");
   const male = useRef(null);
   const female = useRef(null);
   const otherGender = useRef(null);
@@ -55,10 +55,10 @@ const Appoint = () => {
           name,
           phone: phone.current.value,
           email: email.current.value,
-          password: password.current.value,
+          dob: dob.current.value,
           bloodGroup: bgroup.current.value,
           address1: address1.current.value,
-          address2: address2.current.value,
+          // address2: address2.current.value,
           city: city.current.value,
           zip: zip.current.value,
           gender
@@ -111,9 +111,9 @@ const Appoint = () => {
           </div>
           <div className="col-md-5">
             <i className="bi bi-envelope"></i>
-            <label htmlFor="inputPassword4" className="form-label">Password</label>
+            <label htmlFor="inputPassword4" className="form-label">Date-Of-Birth</label>
             
-            <input type="password" className="form-control" id="inputPassword4" ref={password}/>
+            <input type="date" className="form-control" id="inputPassword4" ref={dob}/>
           </div>
 
 
@@ -128,10 +128,10 @@ const Appoint = () => {
             <label htmlFor="inputAddress" className="form-label">Address</label>
             <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" ref={address1}/>
           </div>
-          <div className="col-10">
+          {/* <div className="col-10">
             <label htmlFor="inputAddress2" className="form-label">Address 2</label>
             <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" ref={address2}/>
-          </div>
+          </div> */}
           <div className="col-md-4">
             <label htmlFor="inputCity" className="form-label">City</label>
             <input type="text" className="form-control" id="inputCity" ref={city}/>

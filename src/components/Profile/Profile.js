@@ -64,12 +64,12 @@ const [appointData, setAppointData] = useState({})
                   <div className="key">
                     <p>Name</p>
                     <p>D.O.B</p>
-                    <p>Gender</p>
+                    {/* <p>Gender</p> */}
                   </div>
                   <div className="value">
                     <p>{userData.name}</p>
                     <p> { userData.dob ? userData.dob : "--" } </p>
-                    <p> { userData.gender ? userData.gender : "--" } </p>
+                    {/* <p> { userData.gender ? userData.gender : "--" } </p> */}
                   </div>
                 </div>
                 <img className='profileImg' src={userImg} alt="" />
