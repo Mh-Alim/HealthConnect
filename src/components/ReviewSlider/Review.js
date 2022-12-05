@@ -95,6 +95,8 @@ const Review = () => {
   const reviewRef = useRef('');
   const [reviewName, setReviewName] = useState(true);
   const [vis, setVis] = useState("none")
+
+  // just for button 
   const handleDisplay = () => {
 
     if(reviewName) setReviewName(false);
@@ -104,16 +106,16 @@ const Review = () => {
   }
 
 
-const getMyEmail = async() => {
+// const getMyEmail = async() => {
 
-}
+// }
 
   // reviewStar();
 let initial = true;
   useEffect(() => {
     if(initial) {
       reviewStar();
-      getMyEmail();
+      // getMyEmail();
       initial = false;
     }
     
@@ -137,6 +139,7 @@ let initial = true;
   })
 // console.log("after res")
     const resFromServerInJson = await res.json();
+    console.log(resFromServerInJson)
    let stars = document.querySelectorAll('.star');
 
    stars.forEach(function(elem,ind){
@@ -169,13 +172,14 @@ let initial = true;
                 
                 
             });
-            console.log(resFromServer);
+            // console.log(resFromServer);
             
 
             const resFromServerInJson = await resFromServer.json();
+            console.log("Res from server")
             console.log(resFromServerInJson);
             setUsers(resFromServerInJson.user);
-            console.log(users)
+            // console.log(users)
             // window.alert(resFromServerInJson.message);
             // console.log(user);
 
@@ -238,16 +242,16 @@ let initial = true;
                  
                     return (
                       user.review ? 
-                      <div className="review_col" key={user.email}>
+                      <div className="review_col" key={user._id}>
                         <div className="testimonial">
                           <img src={image} alt="reviewImage" />
-                          <div className="name">{user.name}</div>
+                          <div className="name">{user.user.name}</div>
                           <div className="stars">
                               {/* <i className="far fa-star"></i> for not filled stars */}
                               
                               {
                                 starHtmlElem.map((el, i) => {
-                                   return i < user.rating ? <i className={el} key={i}></i> : <i className="far fa-star" key={i}></i>
+                                   return i < user.reviewRating ? <i className={el} key={i}></i> : <i className="far fa-star" key={i}></i>
                                 })
                                 
                               }
@@ -263,7 +267,10 @@ let initial = true;
               
 
               }
-            </div>
+            </div>  
+
+
+
           </div>
         </div>
     </div>

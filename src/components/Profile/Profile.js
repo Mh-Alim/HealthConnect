@@ -32,7 +32,7 @@ const [appointData, setAppointData] = useState({})
       }
       
       setUserData(data);
-      // console.log(data);
+      console.log(data);
 
       if(!res.status === 200){
         throw new Error(res.error);
@@ -64,12 +64,12 @@ const [appointData, setAppointData] = useState({})
                   <div className="key">
                     <p>Name</p>
                     <p>D.O.B</p>
-                    {/* <p>Gender</p> */}
+                    <p>Gender</p>
                   </div>
                   <div className="value">
-                    <p>{userData.name}</p>
-                    <p> { userData.dob ? userData.dob : "--" } </p>
-                    {/* <p> { userData.gender ? userData.gender : "--" } </p> */}
+                    <p className='overflowHide'>{userData.name}</p>
+                    <p className='overflowHide'> { userData.details ? userData.details.dob ? userData.details.dob : "--" : "--" } </p>
+                    <p className='overflowHide'> { userData.details ? userData.details.Gender ? userData.details.Gender : "--" : "--" } </p>
                   </div>
                 </div>
                 <img className='profileImg' src={userImg} alt="" />
@@ -87,9 +87,9 @@ const [appointData, setAppointData] = useState({})
                     <p>Address</p>
                   </div>
                   <div className="value">
-                    <p>{userData.phone}</p>
-                    <p id='cemail'>{userData.email}</p>
-                    <p> { userData.address ? userData.address : "--" } </p>
+                    <p className='overflowHide' id='phone'>{userData.phone}</p>
+                    <p className='overflowHide' id='cemail'>{userData.email}</p>
+                    <p className='overflowHide' id='address'> { userData.details ? userData.details.address ? userData.details.address : "--" : "--" } </p>
                   </div>
                   {/* <p> <span className='key'>Phone</span> <span className='value'>7748070763</span> </p>
                   <p> <span className='key'>Email</span> <span className='value'>smasoon7789@gmail.com</span> </p>
@@ -106,8 +106,8 @@ const [appointData, setAppointData] = useState({})
                     <p>Weight</p>
                   </div>
                   <div className="value">
-                    <p> { userData.height ? userData.height : "--" }</p>
-                    <p>{ userData.weight ? userData.weight : "--" }</p>
+                    <p> { userData.details ? userData.details.height ? userData.details.height : "--" : "--" }</p>
+                    <p>{ userData.details ?  userData.details.weight ? userData.details.weight : "--" : "--" }</p>
                   </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 
 
 const EditProfile = () => {
-  const [userData, setUserData] = useState({name:"",email:"",phone:"",address:"",height:"",weight:"",dob:"",id:""});
+  const [userData, setUserData] = useState({});
   const navigate = useNavigate();
 
 
@@ -22,7 +22,7 @@ const EditProfile = () => {
     
     try{
 
-      const res = await fetch("/api/editProfile",{
+      const res = await fetch("/api/profile",{
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -31,11 +31,12 @@ const EditProfile = () => {
       
       
       const resFromServerInJson = await res.json();
+      console.log(resFromServerInJson)
       if(res.status === 401){
           window.alert(resFromServerInJson.message);
       }
       else if(!res.status === 200) throw new Error("User not found");
-      setUserData({...userData,name:resFromServerInJson.name, email : resFromServerInJson.email, phone: resFromServerInJson.phone,id:resFromServerInJson._id});
+      setUserData(resFromServerInJson);
   
     } 
     catch(err){
@@ -62,14 +63,16 @@ const EditProfile = () => {
 
 
       e.preventDefault();
-      const {name,phone,password,address,height,weight,dob,id,email} = userData;
+      // email, password,
+      const {name,phone,address,height,weight,dob} = userData;
       const res = await fetch("/api/editProfile", {
         method : "POST",
         headers: {
           "Content-Type" : "application/json"
         },
         body : JSON.stringify({
-          name,phone,password,address,height,weight,dob,id,email
+          //,id,email, password
+          name,phone,address,height,weight,dob
         })
       })
 
@@ -108,8 +111,8 @@ const EditProfile = () => {
             <MDBInput wrapperClass='mb-4' label='Height(in cm)' size='lg' name='height' id='form2' type='number' onChange={handleChange} />
             <MDBInput wrapperClass='mb-4' label='weight(in Kg)' size='lg' name='weight' id='form2' type='number' onChange={handleChange} />
             <MDBInput wrapperClass='mb-4' label='Your Phone Number' name='phone' size='lg' id='form2' type='tel' value={userData.phone} onChange={handleChange}/>
-            <MDBInput wrapperClass='mb-4' label='Your Email' size='lg' name='email' id='form2' type='email' value={userData.email}/>
-            <MDBInput wrapperClass='mb-4' label='Address' size='lg' name='address' id='form4' type='text' value={userData.address} onChange={handleChange}/>
+            {/* <MDBInput wrapperClass='mb-4' label='Your Email' size='lg' name='email' id='form2' type='email' value={userData.email}/> */}
+            <MDBInput wrapperClass='mb-4' label='Address' size='lg' name='address' id='form4' type='text' value={userData.details ? userData.details.address ? userData.details.address : "" : ""} onChange={handleChange}/>
             {/* <div className='d-flex flex-row justify-content-center mb-4'>
                 <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I agree all statements in Terms of service' />
             </div> */}

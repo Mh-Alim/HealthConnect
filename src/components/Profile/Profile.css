@@ -30,6 +30,12 @@
     margin-left: 20px;
 }
 
+
+.contentContactInfoText{
+    margin-left: 4rem;
+}
+
+
 .profileHeading{
     text-align: center;
 }
@@ -110,6 +116,8 @@
     display: flex;
     justify-content: space-around;
 }
+
+
 .contentBasicInfoText{
     /* margin-left: 4rem; */
     text-align: left;
@@ -133,15 +141,13 @@
         margin-left: 0;
     }
    
-    .contentContactInfoText{
-        margin-left: 4rem;
-    }
+
 
     .key{
         padding-right: 4vw;
     }
     #cemail{
-       width: 80%;
+       width: 130%;
        overflow-x:scroll;
 
     }
@@ -150,6 +156,18 @@
         padding-right: 2rem;
         
     }
+    .contentContactInfoText .value{
+        width: 30%;
+        
+    }
+    .overflowHide{
+        width: 130%;
+        overflow-x: scroll;
+        scrollbar-width: thin;
+    }
+    .contentContactInfoText{
+        margin: 0;
+    }
 }
 
 .editInfo{
@@ -157,3 +175,15 @@
     margin-top: 3rem;
 
 }
+
+
+/* #address{
+    width: 130%;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+}
+#phone {
+    width: 130%;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+} */

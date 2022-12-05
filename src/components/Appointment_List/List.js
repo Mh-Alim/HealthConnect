@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import "./List.css"
 import userImg from "../../images/user.jpg"
 const List = () => {
-
+    var count = 1;
     const [user, setUser] = useState([{}]);
     const navigate = useNavigate();
 
@@ -39,6 +39,9 @@ const List = () => {
         
     }
 
+
+    
+
     let initial = true;
     useEffect(() => {
       if(initial){
@@ -54,15 +57,15 @@ const List = () => {
         <div className="innerList">
             
            {
-            user.map( (singleUser,idx) => {
-                return <div className="userImg">
+            user.map( (singleUser) => {
+                return ( singleUser.status === "Progress" ?    <div className="userImg" key={singleUser._id}>
                     <img src={userImg} alt="userImage" id='' />
                     <div className="listText">
-                        <p className='cp userEmail' > {singleUser.email ? singleUser.email : "loading" } </p>
-                        <p className='cp userName'>{singleUser.name ? singleUser.name : "loading name"}</p>
-                        <p className='cp appointmentNo' >{idx+1}</p>
+                        <p className='cp userEmail' > {singleUser.user.email ? singleUser.user.email : "loading" } </p>
+                        <p className='cp userName'>{singleUser.user.details.name ? singleUser.user.details.name : "loading name"}</p>
+                        <p className='cp appointmentNo'>{count++}</p>
                     </div>
-                </div>
+                </div> : null);
             })
            }
             
