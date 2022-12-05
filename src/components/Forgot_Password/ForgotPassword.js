@@ -35,7 +35,7 @@ const ForgotPassword = () => {
         })
       // console.log("after res")
         const resFromServerInJson = await res.json();
-        console.log("json res in handleclick fun "+resFromServerInJson);
+        console.log("json res in handleclick fun "+resFromServerInJson.message);
         if(res.status === 200){
           window.alert(resFromServerInJson.message);
           setOtpDisplay(true);

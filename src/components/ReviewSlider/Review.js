@@ -228,7 +228,10 @@ let initial = true;
                   
                   {/* <MDBInput wrapperClass='mb-4' id='review'  label='Write Reveiw' inputRef={reviewRef} size='lg'  name='review' type='text'  /> */}
                   <MDBTextArea label='Message' contrast id='textAreaExample' className='mb-3' inputRef={reviewRef} rows={4} />
-                  <MDBBtn className='mb-4 w-100 gradient-custom-4' type='submit' onClick={submitReviewHandler}  size='lg' >Submit Reivew</MDBBtn>
+                  <MDBBtn className='mb-4 w-100 gradient-custom-4' type='submit' onClick={ async(e) => {
+                    await submitReviewHandler(e);
+                    userReviews();
+                  }}  size='lg' >Submit Reivew</MDBBtn>
                 </MDBCardBody>
                 
               </MDBCard>

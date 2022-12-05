@@ -2,14 +2,19 @@ import React,{useEffect,useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./List.css"
 import userImg from "../../images/user.jpg"
+
+
+
 const List = () => {
     var count = 1;
+
+    const [logedInUser, setLogedInUser] = useState({});
     const [user, setUser] = useState([{}]);
     const navigate = useNavigate();
 
     const makeList = async () => {
         try{
-
+            console.log("makeList");
             const resFromServer = await fetch("/api/list",{
                 method: "GET",
                 headers: {
@@ -40,12 +45,48 @@ const List = () => {
     }
 
 
+    // only for admin
+    const deleteListHandler = async (appointment_id)=> {
+        const resFromServer = await fetch("/api/delList",{
+            method : "POST",
+            headers: {
+            "Content-Type" : "application/json"
+            },
+            body : JSON.stringify({
+                appointment_id
+            })
+
+        });
+
+        const resInJson = await resFromServer.json();
+        console.log(resInJson);
+        alert(resInJson.message);
+        
+    }
+
+    // checking user or admin
+
+    const userOrAdmin = async ()=> {
+        const resFromServer = await fetch("/api/logedInUser",{
+            method: "GET",
+            headers: {
+                "Content-Type" : "application/json",
+            }
+            
+            
+        });
+        const res = await resFromServer.json();
+        setLogedInUser(res.user);
+        console.log(res)
+        console.log(logedInUser);
     
+    }
 
     let initial = true;
     useEffect(() => {
       if(initial){
         makeList();
+        userOrAdmin();
         initial = false;
       }
     }, [])
@@ -63,7 +104,12 @@ const List = () => {
                     <div className="listText">
                         <p className='cp userEmail' > {singleUser.user.email ? singleUser.user.email : "loading" } </p>
                         <p className='cp userName'>{singleUser.user.details.name ? singleUser.user.details.name : "loading name"}</p>
-                        <p className='cp appointmentNo'>{count++}</p>
+                        <p className='cp appointmentNo'>Appointment No. {count++}</p>
+                        { (logedInUser.Role === 'admin') ? <p onClick={async() => {
+                            await deleteListHandler(singleUser._id);
+                            makeList();
+                        }} id='deleteList' className='cp'><i   className="bi bi-bag-check" > </i></p> : null }
+                        
                     </div>
                 </div> : null);
             })
