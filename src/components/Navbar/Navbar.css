@@ -59,6 +59,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: -1;
 }
 
 
@@ -137,7 +138,7 @@ body{
 
 
 
-@media only screen and (max-width:700px) {
+@media only screen and (max-width:900px) {
       #nav-hamburger{
         display: block;
     }

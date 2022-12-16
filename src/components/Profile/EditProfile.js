@@ -111,7 +111,7 @@ const EditProfile = () => {
             <MDBInput wrapperClass='mb-4' label='Height(in cm)' size='lg' name='height' id='form2' type='number' onChange={handleChange} />
             <MDBInput wrapperClass='mb-4' label='weight(in Kg)' size='lg' name='weight' id='form2' type='number' onChange={handleChange} />
             <MDBInput wrapperClass='mb-4' label='Your Phone Number' name='phone' size='lg' id='form2' type='tel' value={userData.phone} onChange={handleChange}/>
-            {/* <MDBInput wrapperClass='mb-4' label='Your Email' size='lg' name='email' id='form2' type='email' value={userData.email}/> */}
+            {/* <MDBInput wrapperclassName='mb-4' label='Your Email' size='lg' name='email' id='form2' type='email' value={userData.email}/> */}
             <MDBInput wrapperClass='mb-4' label='Address' size='lg' name='address' id='form4' type='text' value={userData.details ? userData.details.address ? userData.details.address : "" : ""} onChange={handleChange}/>
             {/* <div className='d-flex flex-row justify-content-center mb-4'>
                 <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I agree all statements in Terms of service' />

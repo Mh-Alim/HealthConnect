@@ -215,7 +215,7 @@ let initial = true;
             <MDBContainer id='for_pass_container' style={{display: vis}}  fluid className=' align-items-center ' >
               <MDBCard className='m-5' id='signup_card'>
                 <MDBCardBody id='reviewStyle'  className='padd' >
-                  {/* <MDBInput wrapperClass='mb-4' label='Rating (0-5)' size='lg' inputRef={ratingRef}   name='rating' type='number'  /> */}
+                  {/* <MDBInput wrapperclassName='mb-4' label='Rating (0-5)' size='lg' inputRef={ratingRef}   name='rating' type='number'  /> */}
                   <div className="star-rating">
                     <ul className="stars">
                       <li className="star"><i className="fa fa-star"></i></li>
@@ -226,7 +226,7 @@ let initial = true;
                     </ul>
                   </div>
                   
-                  {/* <MDBInput wrapperClass='mb-4' id='review'  label='Write Reveiw' inputRef={reviewRef} size='lg'  name='review' type='text'  /> */}
+                  {/* <MDBInput wrapperclassName='mb-4' id='review'  label='Write Reveiw' inputRef={reviewRef} size='lg'  name='review' type='text'  /> */}
                   <MDBTextArea label='Message' contrast id='textAreaExample' className='mb-3' inputRef={reviewRef} rows={4} />
                   <MDBBtn className='mb-4 w-100 gradient-custom-4' type='submit' onClick={ async(e) => {
                     await submitReviewHandler(e);

@@ -61,18 +61,20 @@ const [appointData, setAppointData] = useState({})
               <h1 className='profileHeading'>Basic info</h1>
               <div className="contentBasicInfo">
                 <div className="contentBasicInfoText">
-                  <div className="key">
-                    <p>Name</p>
-                    <p>D.O.B</p>
-                    <p>Gender</p>
+                  <div className="key dflex">
+                    <span className='space'>Name</span>
+                    <span className='overflowHide'>{userData.name}</span>
                   </div>
-                  <div className="value">
-                    <p className='overflowHide'>{userData.name}</p>
-                    <p className='overflowHide'> { userData.details ? userData.details.dob ? userData.details.dob : "--" : "--" } </p>
-                    <p className='overflowHide'> { userData.details ? userData.details.Gender ? userData.details.Gender : "--" : "--" } </p>
+                  <div className="key dflex">
+                    <span className='space'>D.O.B</span>
+                    <span className='overflowHide'>{ userData.details ? userData.details.dob ? userData.details.dob : "--" : "--" }</span>
+                  </div>
+                  <div className="key dflex pb_3">
+                    <span className='space'>Gender</span>
+                    <span className='overflowHide'> { userData.details ? userData.details.Gender ? userData.details.Gender : "--" : "--" }</span>
                   </div>
                 </div>
-                <img className='profileImg' src={userImg} alt="" />
+                {/* <img className='profileImg' src={userImg} alt="" /> */}
 
               </div>
             </div>
@@ -81,15 +83,17 @@ const [appointData, setAppointData] = useState({})
             <div className="contactInfo">
               <h1 className='profileHeading'>Contact Information</h1>
               <div className="contentContactInfoText">
-                  <div className="key">
-                    <p>Phone</p>
-                    <p >Email</p>
-                    <p>Address</p>
+                  <div className="key dflex">
+                    <span className='space'  >Phone</span>
+                    <span className='overflowHide' id='phone'>{userData.phone}</span>
                   </div>
-                  <div className="value">
-                    <p className='overflowHide' id='phone'>{userData.phone}</p>
-                    <p className='overflowHide' id='cemail'>{userData.email}</p>
-                    <p className='overflowHide' id='address'> { userData.details ? userData.details.address ? userData.details.address : "--" : "--" } </p>
+                  <div className="key dflex">
+                    <span className='space' >Email</span>
+                    <span className='overflowHide' >{userData.email}</span>
+                  </div>
+                  <div className="key dflex pb_3">
+                    <span className='space' >Address</span>
+                    <span className='overflowHide text_justify' >{ userData.details ? userData.details.address ? userData.details.address : "--" : "--" }</span>
                   </div>
                   {/* <p> <span className='key'>Phone</span> <span className='value'>7748070763</span> </p>
                   <p> <span className='key'>Email</span> <span className='value'>smasoon7789@gmail.com</span> </p>
@@ -101,13 +105,13 @@ const [appointData, setAppointData] = useState({})
             <div className="personalInfo">
               <h1 className='profileHeading'>Personal Information</h1>
               <div className="personalInfoText">
-                  <div className="key">
-                    <p>Height</p>
-                    <p>Weight</p>
+                  <div className="key dflex">
+                    <span className='space'>Height</span>
+                    <span className=''> { userData.details ? userData.details.height ? userData.details.height : "--" : "--" }</span>
                   </div>
-                  <div className="value">
-                    <p> { userData.details ? userData.details.height ? userData.details.height : "--" : "--" }</p>
-                    <p>{ userData.details ?  userData.details.weight ? userData.details.weight : "--" : "--" }</p>
+                  <div className="key dflex">
+                    <span className='space'>Weight</span>
+                    <span className=''>{ userData.details ?  userData.details.weight ? userData.details.weight : "--" : "--" }</span>
                   </div>
               </div>
             </div>

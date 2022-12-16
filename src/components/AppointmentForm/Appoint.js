@@ -68,10 +68,11 @@ const Appoint = () => {
 
       const resFromServerInJson = await resFromServer.json();
       console.log(resFromServerInJson);
-
+      console.log("here1")
       if(resFromServer.status === 401){
-
+        console.log("401 status me gadbad");
         window.alert(resFromServerInJson.message);
+        console.log(resFromServerInJson);
       }
       else if(resFromServer.status === 422 || !resFromServer){
         // window.alert("login before appointment");
@@ -79,6 +80,7 @@ const Appoint = () => {
         console.log(resFromServerInJson.message);
       }
       else {
+        console.log("herelast");
         window.alert("Appointment successfull");
         console.log("Appointment successfull");
         // navigate to payment option 

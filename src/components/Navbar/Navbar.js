@@ -56,6 +56,7 @@ const Navbar = () => {
                 <div id="profile" className='navComponents'><NavLink to="/profile">Profile</NavLink></div>
                 <div id="queue" className='navComponents'><NavLink to="/lists">Lists</NavLink></div>
                 <div id="login" className='navComponents'><NavLink to="/login" >Login</NavLink></div>
+                <div id="login" className='navComponents'><NavLink to="/logout" >Logout</NavLink></div>
             </div>
             <div className="right">
                 <div id="nav-hamburger" onClick={hamburger} >

@@ -23,17 +23,12 @@
 
 .profileImg{
     width: 25vw;
-
     height: 25%;
     object-fit: cover;
     border-radius: 100%;
     margin-left: 20px;
 }
 
-
-.contentContactInfoText{
-    margin-left: 4rem;
-}
 
 
 .profileHeading{
@@ -43,10 +38,77 @@
 
 
 .contentBasicInfo{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    width: 100%;
 }
+.space{
+    margin-right: 3rem;
+}
+.dflex{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+
+.contentBasicInfoText{
+    margin-top: 4px;
+    text-align: left;
+    padding: 0 3rem;
+}
+.key{
+    margin-right: 10px;
+}
+.hline{
+    
+    height: 1px;
+    background-color: #3E78D8;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+
+.profileHeading{
+    padding-left: 4px;
+    /* margin-bottom: 4px; */
+}
+
+
+
+/* contact information  */
+
+
+
+.contentContactInfoText{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+    text-align: justify;
+}
+
+.text_justify{
+    /* text-align: justify;
+    text-justify: inter-word; */
+
+    word-break: break-all;
+}
+.contentBasicInfoText{
+    text-align: left;
+   
+}
+.personalInfoText{
+    padding: 0 3rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.pb_3{
+    padding-bottom: 3rem;
+}
+
+
 @media screen and (min-width: 480px) {
     .profileImg{
         width: 20vw;
@@ -74,63 +136,13 @@
         padding-right: 25vw;
     }
 }
-.contentBasicInfo{
+
+/* .contentBasicInfo{
     
     margin-top: 2rem;
     display: flex;
-}
-.contentBasicInfoText{
-    margin-top: 4px;
-    
-}
-.key{
-    margin-right: 10px;
-}
-.hline{
-    
-    height: 1px;
-    background-color: #3E78D8;
-    border-radius: 50px;
-    margin-bottom: 1rem;
-}
+} */
 
-
-.profileHeading{
-    padding-left: 4px;
-    /* margin-bottom: 4px; */
-}
-
-
-
-/* contact information  */
-
-.contentContactInfoText{
-    margin-top: 2rem;
-}
-
-
-
-
-.contentContactInfoText{
-    text-align: left;
-    display: flex;
-    justify-content: space-around;
-}
-
-
-.contentBasicInfoText{
-    /* margin-left: 4rem; */
-    text-align: left;
-    display: flex;
-    justify-content: space-around;
-}
-.personalInfoText{
-    margin-top: 2rem;
-    padding-right: 10rem;
-    text-align: left;
-    display: flex;
-    justify-content: space-around;
-}
 
 @media screen and (max-width : 400px) {
     .contentBasicInfo{
@@ -141,11 +153,6 @@
         margin-left: 0;
     }
    
-
-
-    .key{
-        padding-right: 4vw;
-    }
     #cemail{
        width: 130%;
        overflow-x:scroll;
@@ -160,13 +167,40 @@
         width: 30%;
         
     }
-    .overflowHide{
-        width: 130%;
-        overflow-x: scroll;
-        scrollbar-width: thin;
+
+}
+
+@media screen and (max-width: 438px) {
+    
+    .contentBasicInfoText{
+        padding: 0 1rem;
+    }
+    .personalInfoText{
+        padding: 0 1rem;
     }
     .contentContactInfoText{
-        margin: 0;
+        padding: 0 1rem;
+    }
+    .space{
+        margin-right: 1rem;
+    }
+}
+@media screen and (max-width: 360px) {
+    
+    .contentBasicInfoText{
+        padding: 0rem;
+    }
+    .personalInfoText{
+        padding: 0rem;
+    }
+    .contentContactInfoText{
+        padding: 0rem;
+    }
+    .space{
+        margin-right: 1rem;
+    }
+    .innerProfile{
+        padding: 2rem 1rem;
     }
 }
 

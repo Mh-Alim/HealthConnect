@@ -17,6 +17,7 @@ import EditProfile from './components/Profile/EditProfile';
 import ForgotPassword from './components/Forgot_Password/ForgotPassword';
 import OTP from './components/Forgot_Password/OTP';
 import ResetPassword from './components/Forgot_Password/ResetPassword';
+import Logout from './components/Login/Logout';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
                 <Route exact path='/forgot_password' element = { <ForgotPassword />  } />
                 <Route exact path='/reset-password' element = { <ResetPassword />  } />
                 <Route exact path='/otp' element = { <OTP />  } />
+                <Route exact path='/logout' element = { <Logout />  } />
                 <Route element= {<Error/>} />
               </Routes>
               {/* <Review /> */}
