@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect} from 'react'
+import React,{useRef} from 'react'
 import {useNavigate, useLocation} from "react-router-dom"
 import {
     MDBBtn,
@@ -6,10 +6,9 @@ import {
     MDBCard,
     MDBCardBody,
     MDBInput,
-    MDBCheckbox
   }
   from 'mdb-react-ui-kit';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import "./ForgotPassword.css"
 
 const ResetPassword = () => {

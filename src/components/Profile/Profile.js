@@ -1,7 +1,7 @@
 import React, {useEffect, useState,useRef} from 'react'
 import {NavLink, useNavigate} from "react-router-dom"
 import "./Profile.css"
-import userImg from "../../images/user.jpg"
+// import userImg from "../../images/user.jpg"
 
 const Profile = () => {
 

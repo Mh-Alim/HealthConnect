@@ -3,9 +3,9 @@ import {useNavigate} from "react-router-dom"
 import "./Appoint.css"
 
 // eslint-disable-next-line
-import mobImg from '../../images/workingProcess/mobile.png'
+// import mobImg from '../../images/workingProcess/mobile.png'
 // eslint-disable-next-line
-import mobWomen from '../../images/workingProcess/mobileWomen.png'
+// import mobWomen from '../../images/workingProcess/mobileWomen.png'
 
 
 

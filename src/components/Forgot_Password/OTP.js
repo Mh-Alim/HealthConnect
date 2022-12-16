@@ -1,12 +1,11 @@
-import React,{useState,useRef} from 'react'
-import {Navigate, useNavigate} from "react-router-dom"
+import React,{useRef} from 'react'
+import {useNavigate} from "react-router-dom"
 import {
     MDBBtn,
     MDBContainer,
     MDBCard,
     MDBCardBody,
     MDBInput,
-    MDBCheckbox
   }
   from 'mdb-react-ui-kit';
 import { NavLink } from 'react-router-dom';
