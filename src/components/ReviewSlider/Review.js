@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect} from 'react'
+import React,{useState,useRef,useEffect, useCallback} from 'react'
 import {useNavigate} from "react-router-dom"
 import {
     MDBBtn,
@@ -10,7 +10,7 @@ import {
     // MDBCheckbox
   }
   from 'mdb-react-ui-kit';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import "./Review.css"
 import image from "../../images/user.jpg"
 
@@ -77,7 +77,7 @@ const reviewStar = ()=> {
 
 
   // main function
-  for(var i = 0;i<stars.length;i++){
+  for(let i = 0;i<stars.length;i++){
     stars[i].starValue = i+1;
     
     ["click","mouseover","mouseout"].forEach((elem)=>{
@@ -90,7 +90,7 @@ const reviewStar = ()=> {
 const Review = () => {
   const navigate = useNavigate();
 
-  const [myEmail, setMyEmail] = useState('');
+  // const [myEmail, setMyEmail] = useState('');
   const [users, setUsers] = useState([{}]);
   const reviewRef = useRef('');
   const [reviewName, setReviewName] = useState(true);
@@ -111,12 +111,12 @@ const Review = () => {
 // }
 
   // reviewStar();
-let initial = true;
+let initial = useRef(true);
   useEffect(() => {
-    if(initial) {
+    if(initial.current) {
       reviewStar();
       // getMyEmail();
-      initial = false;
+      initial.current = false;
     }
     
   }, [])
@@ -149,7 +149,7 @@ let initial = true;
 
     if(res.status === 200){
       reviewRef.current.value = '';
-      setMyEmail(resFromServerInJson.email);
+      // setMyEmail(resFromServerInJson.email);
     }
     window.alert(resFromServerInJson.message);
   }
@@ -160,7 +160,7 @@ let initial = true;
 
   // get request for reviews
 
-    const userReviews = async () => {
+    const userReviews = useCallback( async () => {
       console.log("userReviews")
         try{
 
@@ -189,15 +189,15 @@ let initial = true;
             navigate("/login");
         }
         
-    }
-    let initial1 = true;
+    },[navigate])
+    let initial1 = useRef(true);
     useEffect(() => {
-      if(initial1){
+      if(initial1.current){
         userReviews();
-        initial1 = false;
+        initial1.current = false;
       }
       
-    }, []);
+    }, [userReviews]);
 
 
   

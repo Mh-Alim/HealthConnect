@@ -1,5 +1,5 @@
 import React,{useRef} from 'react'
-import {useNavigate} from "react-router-dom"
+// import {useNavigate} from "react-router-dom"
 import {
     MDBBtn,
     MDBContainer,
@@ -8,12 +8,12 @@ import {
     MDBInput,
   }
   from 'mdb-react-ui-kit';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import "./ForgotPassword.css"
 
 const OTP = () => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const otpRef = useRef();
 
     const handleClick = async (e)=> {

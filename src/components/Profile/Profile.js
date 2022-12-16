@@ -1,4 +1,4 @@
-import React, {useEffect, useState,useRef} from 'react'
+import React, {useEffect, useState,useRef,useCallback} from 'react'
 import {NavLink, useNavigate} from "react-router-dom"
 import "./Profile.css"
 // import userImg from "../../images/user.jpg"
@@ -7,11 +7,11 @@ const Profile = () => {
 
 const [userData, setUserData] = useState({});
 const initial = useRef(false);
-const [appointData, setAppointData] = useState({})
+// const [appointData, setAppointData] = useState({})
   const navigate = useNavigate();
 
 
-  const callAboutPage = async () => {
+  const callAboutPage = useCallback( async () => {
 
     try{
       const res = await fetch("/api/profile",{
@@ -43,15 +43,15 @@ const [appointData, setAppointData] = useState({})
       navigate("/login");
     }
     
-  }
+  },[navigate])
   useEffect(() => {
     if(!initial.current){
       initial.current=true;
-    callAboutPage();
+      callAboutPage();
 
     }
     
-  }, []);
+  }, [callAboutPage]);
   
 
   return (

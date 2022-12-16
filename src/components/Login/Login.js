@@ -17,7 +17,6 @@ from 'mdb-react-ui-kit';
 import { NavLink } from 'react-router-dom';
 
 const Login = () => {
-  const [login, setLogin] = useState(false)
 
   // imbedding toggle logein and logout
 

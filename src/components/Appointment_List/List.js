@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useRef,useState,useCallback} from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./List.css"
 import userImg from "../../images/user.jpg"
@@ -12,7 +12,7 @@ const List = () => {
     const [user, setUser] = useState([{}]);
     const navigate = useNavigate();
 
-    const makeList = async () => {
+    const makeList = useCallback( async () => {
         try{
             console.log("makeList");
             const resFromServer = await fetch("/api/list",{
@@ -28,7 +28,7 @@ const List = () => {
 
             const resFromServerInJson = await resFromServer.json();
             console.log(resFromServerInJson);
-            if(resFromServer.status == 401){
+            if(resFromServer.status === 401){
                 window.alert(resFromServerInJson.message);
                 navigate("/login");
             }
@@ -42,7 +42,7 @@ const List = () => {
             navigate("/login");
         }
         
-    }
+    },[navigate,user]);
 
 
     // only for admin
@@ -66,7 +66,7 @@ const List = () => {
 
     // checking user or admin
 
-    const userOrAdmin = async ()=> {
+    const userOrAdmin = useCallback( async ()=> {
         const resFromServer = await fetch("/api/logedInUser",{
             method: "GET",
             headers: {
@@ -80,16 +80,16 @@ const List = () => {
         console.log(res)
         console.log(logedInUser);
     
-    }
+    },[logedInUser]);
 
-    let initial = true;
+    let initial = useRef(true);
     useEffect(() => {
-      if(initial){
+      if(initial.current === true){
         makeList();
         userOrAdmin();
-        initial = false;
+        initial.current = false;
       }
-    }, [])
+    }, [makeList,userOrAdmin])
     
 
 

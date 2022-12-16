@@ -21,7 +21,7 @@ const Logout = () => {
   
         
         const data = await res.json();
-        if(res.status != 201){
+        if(res.status !== 201){
             alert("You are not logged in yet");
         }
         else {
