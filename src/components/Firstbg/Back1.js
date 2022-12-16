@@ -12,6 +12,7 @@ const Back1 = () => {
     <>
         <div className="bg1">
           <img src={shape} alt="back1"  />
+          
           <div className="flexRow">
               <Tilt className='docImg'>
                   <img src={drImg} alt="DoctorImg" />

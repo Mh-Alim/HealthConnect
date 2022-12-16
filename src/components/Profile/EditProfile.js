@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useCallback} from 'react'
 import "../Signup/Signup.css"
 
 import {
@@ -18,7 +18,7 @@ const EditProfile = () => {
   const navigate = useNavigate();
 
 
-  const callFun = async () => {
+  const callFun = useCallback( async () => {
     
     try{
 
@@ -43,10 +43,10 @@ const EditProfile = () => {
       console.log(err);
       navigate("/login");
     }
-  }
+  },[navigate])
   useEffect(() => {
     callFun();
-  }, []);
+  }, [callFun]);
 
 
   const handleChange = (e)=>{

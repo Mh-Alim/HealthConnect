@@ -27,6 +27,7 @@ const OTP = () => {
             },
             body: JSON.stringify({
                 otp
+                
             })
         })
 

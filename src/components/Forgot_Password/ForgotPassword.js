@@ -14,6 +14,7 @@ import "./ForgotPassword.css"
 const ForgotPassword = () => {
 
     const emailRef = useRef("");
+    
     const [otpDisplay, setOtpDisplay] = useState(false);
     const otpRef = useRef("");
     const navigate = useNavigate();
