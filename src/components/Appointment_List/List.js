@@ -2,10 +2,14 @@ import React,{useEffect,useRef,useState,useCallback} from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./List.css"
 import userImg from "../../images/user.jpg"
+import Search from './Search'
+import AptList from './AptList'
 
 
 
 const List = () => {
+
+
     var count = 1;
 
     const [logedInUser, setLogedInUser] = useState({});
@@ -14,7 +18,6 @@ const List = () => {
 
     const makeList = useCallback( async () => {
         try{
-            console.log("makeList");
             const resFromServer = await fetch("/api/list",{
                 method: "GET",
                 headers: {
@@ -23,18 +26,15 @@ const List = () => {
                 
                 
             });
-            // console.log(resFromServer);
             
 
             const resFromServerInJson = await resFromServer.json();
-            console.log(resFromServerInJson);
             if(resFromServer.status === 401){
                 window.alert(resFromServerInJson.message);
                 navigate("/login");
             }
 
             setUser(resFromServerInJson);
-            console.log(user);
 
         }
         catch(err){
@@ -59,7 +59,6 @@ const List = () => {
         });
 
         const resInJson = await resFromServer.json();
-        console.log(resInJson);
         alert(resInJson.message);
         
     }
@@ -77,8 +76,7 @@ const List = () => {
         });
         const res = await resFromServer.json();
         setLogedInUser(res.user);
-        console.log(res)
-        console.log(logedInUser);
+        
     
     },[logedInUser]);
 
@@ -94,16 +92,16 @@ const List = () => {
 
 
   return (
-    <div id='AppointmentList'>
-        <div className="innerList">
+
+    <div className="innerList">
             
            {
             user.map( (singleUser) => {
-                return ( singleUser.status === "Progress" ?    <div className="userImg" key={singleUser._id}>
+                return ( singleUser.status==="Progress" ?    <div className="userImg" key={singleUser._id}>
                     <img src={userImg} alt="userImage" id='' />
                     <div className="listText">
                         <p className='cp userEmail' > {singleUser.user.email ? singleUser.user.email : "loading" } </p>
-                        <p className='cp userName'>{singleUser.user.details.name ? singleUser.user.details.name : "loading name"}</p>
+                        <p className='cp userName'>{singleUser.user.name ? singleUser.user.name : "loading name"}</p>
                         <p className='cp appointmentNo'>Appointment No. {count++}</p>
                         { (logedInUser.Role === 'admin') ? <p onClick={async() => {
                             await deleteListHandler(singleUser._id);
@@ -117,8 +115,8 @@ const List = () => {
             
             
             
-        </div>   
-    </div>
+        </div>
+    
   )
 }
 

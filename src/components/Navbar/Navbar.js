@@ -1,10 +1,10 @@
-import React from 'react'
+import React,{useCallback, useContext,useEffect} from 'react'
 
 import './Navbar.css'
 import {NavLink} from "react-router-dom"
 import logo from '../../images/bg1/hospital-logo.png'
 import $ from 'jquery';
-
+import { userContext } from '../../App';
 
 function hamburger(){
 
@@ -38,9 +38,36 @@ $(document).ready(function(){
 });
 
 const Navbar = () => {
- 
+  const {state,dispatch} = useContext(userContext);
 
  
+  const InitialStateFun = useCallback( async () => {
+  
+    const resFromServer = await fetch("/api/login_check",{
+        method: "GET",
+        headers: {
+            "Content-Type" : "application/json",
+        }
+        
+        
+    });
+    const res = await resFromServer.json();
+    if(resFromServer.status === 200){
+        dispatch({type:"USER",payload: true});
+        // user logged in 
+        
+    }
+    else{ 
+      // user not logged in 
+        dispatch({type:"USER",payload: false});
+    }
+    
+
+  },[state])
+  
+  useEffect(() => {
+    InitialStateFun();
+  }, [InitialStateFun])
   return (
     <>
         <div className="navbar" id='navbar'>
@@ -53,10 +80,10 @@ const Navbar = () => {
                 <div id="our-client" className='navComponents'><NavLink to="/review">Reviews</NavLink></div>
                 <div id="contact" className='navComponents'><NavLink to="/contact">Contact</NavLink></div>
                 <div id="appointment" className='navComponents'><NavLink to="/appointment">Appointment</NavLink></div>
-                <div id="profile" className='navComponents'><NavLink to="/profile">Profile</NavLink></div>
-                <div id="queue" className='navComponents'><NavLink to="/lists">Lists</NavLink></div>
-                <div id="login" className='navComponents'><NavLink to="/login" >Login</NavLink></div>
-                <div id="login" className='navComponents'><NavLink to="/logout" >Logout</NavLink></div>
+                {state ? <div id="profile" className='navComponents'><NavLink to="/profile">Profile</NavLink></div> : null }
+                {state ? <div id="queue" className='navComponents'><NavLink to="/lists">Lists</NavLink></div>:null }
+                {!state ? <div id="login" className='navComponents'><NavLink to="/login" >Login</NavLink></div> : null  }
+                {state ? <div id="login" className='navComponents'><NavLink to="/logout" >Logout</NavLink></div> : null }
             </div>
             <div className="right">
                 <div id="nav-hamburger" onClick={hamburger} >

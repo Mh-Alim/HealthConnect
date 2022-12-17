@@ -18,13 +18,23 @@ import ForgotPassword from './components/Forgot_Password/ForgotPassword';
 import OTP from './components/Forgot_Password/OTP';
 import ResetPassword from './components/Forgot_Password/ResetPassword';
 import Logout from './components/Login/Logout';
+import { createContext , useReducer, useEffect} from 'react';
+import { initialState, reducer } from './reducer/UserReducer';
+import AptList from './components/Appointment_List/AptList';
 
+export const userContext = createContext();
 function App() {
+  
+  
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <>
 
               
+            <userContext.Provider value={{state,dispatch}} >
+
             
+
             {/* <Back1 />
             <Back2 />
             <WorkingProcess/> */}
@@ -42,7 +52,7 @@ function App() {
                 <Route exact path='/login' element = { <Login />  } />
                 <Route exact path='/review' element = { <Review />  } />
                 <Route exact path='/profile' element = { <Profile />  } />
-                <Route exact path='/lists' element = { <List />  } />
+                <Route exact path='/lists' element = { <AptList />  } />
                 <Route exact path='/editprofile' element = { <EditProfile />  } />
                 <Route exact path='/forgot_password' element = { <ForgotPassword />  } />
                 <Route exact path='/reset-password' element = { <ResetPassword />  } />
@@ -50,6 +60,8 @@ function App() {
                 <Route exact path='/logout' element = { <Logout />  } />
                 <Route element= {<Error/>} />
               </Routes>
+
+              </userContext.Provider>
               {/* <Review /> */}
     
               {/* <Footer /> */}

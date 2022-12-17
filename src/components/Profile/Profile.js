@@ -12,7 +12,7 @@ const initial = useRef(false);
 
 
   const callAboutPage = useCallback( async () => {
-
+    console.log("first render of profile")
     try{
       const res = await fetch("/api/profile",{
         method: "GET",

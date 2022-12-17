@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect, useCallback} from 'react'
+import React,{useState,useRef,useEffect, useCallback,useContext} from 'react'
 import {useNavigate} from "react-router-dom"
 import {
     MDBBtn,
@@ -13,6 +13,7 @@ import {
 // import { NavLink } from 'react-router-dom';
 import "./Review.css"
 import image from "../../images/user.jpg"
+import { userContext } from '../../App';
 
 // card stars 
 
@@ -88,6 +89,8 @@ const reviewStar = ()=> {
 }
 
 const Review = () => {
+
+  const {state} = useContext(userContext)
   const navigate = useNavigate();
 
   // const [myEmail, setMyEmail] = useState('');
@@ -209,7 +212,7 @@ let initial = useRef(true);
           <div className="inner">
             <h1>Reviews</h1>
             <div className="border"></div>
-            <MDBBtn color='secondary' className='mb-4 reviewHandleBtn gradient-custom-4' type='submit' onClick={handleDisplay}  size='lg' > { reviewName ? "Write Review": "close" }</MDBBtn>
+            {state ? <MDBBtn color='secondary' className='mb-4 reviewHandleBtn gradient-custom-4' type='submit' onClick={handleDisplay}  size='lg' > { reviewName ? "Write Review": "close" }</MDBBtn> : null }
         
           {/* give review  */}
             <MDBContainer id='for_pass_container' style={{display: vis}}  fluid className=' align-items-center ' >

@@ -1,5 +1,5 @@
 
-import React,{ useState} from 'react';
+import React,{ useState,useContext} from 'react';
 import {useNavigate} from "react-router-dom"
 import "./Login.css"
 import {
@@ -15,24 +15,11 @@ import {
 from 'mdb-react-ui-kit';
 
 import { NavLink } from 'react-router-dom';
+import { userContext } from '../../App';
 
 const Login = () => {
 
-  // imbedding toggle logein and logout
-
-
-    
-  
-
-
-
-
-
-
-
-
-
-
+  const {state,dispatch} = useContext(userContext)
   // login codes
 
   const [email, setEmail] = useState('');
@@ -62,8 +49,8 @@ const Login = () => {
     }
 
     else {
-      window.alert("login successfully");
-      console.log("login successfully");
+      dispatch({type:"USER", payload : true});
+
       navigate("/");
     }
 

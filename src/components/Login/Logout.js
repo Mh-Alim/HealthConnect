@@ -1,11 +1,11 @@
 import React from 'react'
-import { useEffect , useRef} from 'react'
-
+import { useEffect , useRef, useContext, } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { userContext } from '../../App'
 
 const Logout = () => {
-    
-    
-
+    const navigate = useNavigate();
+    const {state,dispatch} = useContext(userContext)
 
   const initial = useRef(false);
   const logoutCall = async() => {
@@ -25,7 +25,9 @@ const Logout = () => {
             alert("You are not logged in yet");
         }
         else {
-            alert(data.message)
+            dispatch({type:"USER",payload: false})
+            alert(data.message);
+            navigate("/login");
         }
         
         console.log(data.message);
