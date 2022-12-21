@@ -21,6 +21,7 @@ import Logout from './components/Login/Logout';
 import { createContext , useReducer, useEffect} from 'react';
 import { initialState, reducer } from './reducer/UserReducer';
 import AptList from './components/Appointment_List/AptList';
+import Stripe from './components/Stripe/Stripe';
 
 export const userContext = createContext();
 function App() {
@@ -58,6 +59,7 @@ function App() {
                 <Route exact path='/reset-password' element = { <ResetPassword />  } />
                 <Route exact path='/otp' element = { <OTP />  } />
                 <Route exact path='/logout' element = { <Logout />  } />
+                <Route exact path='/stripe' element = { <Stripe />  } />
                 <Route element= {<Error/>} />
               </Routes>
 
