@@ -1,10 +1,14 @@
 import React,{useState,useEffect} from 'react'
 import {PaymentElement,useStripe,useElements} from '@stripe/react-stripe-js';
 import "./Stripe.css"
+import { useNavigate } from 'react-router-dom';
 
 
 
-const CheckOutForm = () => {
+
+
+const CheckOutForm = ({price}) => {
+  const navigate = useNavigate();
     const stripe = useStripe();
   const elements = useElements();
 
@@ -42,6 +46,47 @@ const CheckOutForm = () => {
     });
   }, [stripe]);
 
+  const takeAppointment  = async () =>{
+    const res = await fetch("/api/takeApt",{
+      method: "GET",
+      headers: {
+        Accept : "application/json",
+        "Content-Type": "application/json",
+      },
+      credentials: 'include'
+    })
+
+    
+    const data = await res.json();
+    if(res.status !== 200){
+      window.alert("Try Again");
+      return res.status;
+      
+      
+    }
+
+    return res.status;
+  }
+  const deleteAppointment  = async () =>{
+    const res = await fetch("/api/deleteApp",{
+      method: "GET",
+      headers: {
+        Accept : "application/json",
+        "Content-Type": "application/json",
+      },
+      credentials: 'include'
+    })
+
+    
+    const data = await res.json();
+    if(res.status !== 200){
+      window.alert("Try Again");
+      return res.status;
+    }
+    console.log("deleted appointment");
+    return res.status;
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -51,28 +96,40 @@ const CheckOutForm = () => {
       return;
     }
 
-    setIsLoading(true);
-
-    const { error } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        // Make sure to change this to your payment completion page
-        return_url: "http://localhost:3000",
-      },
-    });
-
-    // This point will only be reached if there is an immediate error when
-    // confirming the payment. Otherwise, your customer will be redirected to
-    // your `return_url`. For some payment methods like iDEAL, your customer will
-    // be redirected to an intermediate site first to authorize the payment, then
-    // redirected to the `return_url`.
-    if (error.type === "card_error" || error.type === "validation_error") {
-      setMessage(error.message);
-    } else {
-      setMessage("An unexpected error occurred.");
+    let x= await takeAppointment();
+    console.log(x);
+    if(x === 200){
+      setIsLoading(true);
+      console.log("before return url")
+      const { error } = await stripe.confirmPayment({
+        elements,
+        confirmParams: {
+          // Make sure to change this to your payment completion page
+          return_url: "http://localhost:3000/payment-success",
+        },
+      });
+  
+      // This point will only be reached if there is an immediate error when
+      // confirming the payment. Otherwise, your customer will be redirected to
+      // your `return_url`. For some payment methods like iDEAL, your customer will
+      // be redirected to an intermediate site first to authorize the payment, then
+      // redirected to the `return_url`.
+      let del = await deleteAppointment();
+      if (error.type === "card_error" || error.type === "validation_error") {
+        setMessage(error.message);
+        console.log(error)
+      } else {
+        setMessage("An unexpected error occurred.");
+        console.log(error)
+      }
+  
+      setIsLoading(false);
+    }
+    else {
+      navigate("/appointment");
     }
 
-    setIsLoading(false);
+    
   };
 
   const paymentElementOptions = {
@@ -84,7 +141,7 @@ const CheckOutForm = () => {
           <PaymentElement id="payment-element" options={paymentElementOptions} />
           <button disabled={isLoading || !stripe || !elements} id="submit">
             <span id="button-text">
-              {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+              {isLoading ? <div className="spinner" id="spinner"></div> : `Pay Now ${price/100} Rs.`}
             </span>
           </button>
           {/* Show any error or success messages */}

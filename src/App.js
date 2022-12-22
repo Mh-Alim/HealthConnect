@@ -22,6 +22,7 @@ import { createContext , useReducer, useEffect} from 'react';
 import { initialState, reducer } from './reducer/UserReducer';
 import AptList from './components/Appointment_List/AptList';
 import Stripe from './components/Stripe/Stripe';
+import SuccessPage from './components/Stripe/SuccessPageStripe';
 
 export const userContext = createContext();
 function App() {
@@ -60,6 +61,7 @@ function App() {
                 <Route exact path='/otp' element = { <OTP />  } />
                 <Route exact path='/logout' element = { <Logout />  } />
                 <Route exact path='/stripe' element = { <Stripe />  } />
+                <Route exact path='/payment-success' element = { <SuccessPage />  } />
                 <Route element= {<Error/>} />
               </Routes>
 

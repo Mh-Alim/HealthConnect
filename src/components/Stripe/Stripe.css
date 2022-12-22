@@ -1,13 +1,14 @@
 
 .stripe{
+  height: 100vh;
+  width: 100vw;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   display: flex;
   justify-content: center;
-  align-content: center;
-  height: 100vh;
-  width: 100vw;
+  align-items: center;
+  
 }
 
 .checkoutform > form {
@@ -32,9 +33,15 @@
 #payment-element {
   margin-bottom: 24px;
 }
+.success{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
 
-
-.checkoutform > button {
+.checkoutform button {
   background: #5469d4;
   font-family: Arial, sans-serif;
   color: #ffffff;
@@ -50,11 +57,11 @@
   width: 100%;
 }
 
-button:hover {
+.checkoutform button:hover {
   filter: contrast(115%);
 }
 
-button:disabled {
+.checkoutform button:disabled {
   opacity: 0.5;
   cursor: default;
 }

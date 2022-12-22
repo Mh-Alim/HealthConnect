@@ -80,11 +80,14 @@ const Appoint = () => {
         console.log(resFromServerInJson.message);
       }
       else {
-        console.log("herelast");
-        window.alert("Appointment successfull");
-        console.log("Appointment successfull");
+        window.alert("Pay Your Fee");
+        console.log("PAY");
         // navigate to payment option 
-        navigate("/");
+        navigate("/stripe",{
+          state: {
+            user_id : resFromServerInJson.user_id
+          }
+        });
       }
   }
   return (
