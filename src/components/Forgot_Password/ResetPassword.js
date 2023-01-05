@@ -34,7 +34,7 @@ const ResetPassword = () => {
         const pass = passRef.current.value;
         const cpass = cpassRef.current.value;
 
-        const res = await fetch("/api/reset-password",{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/reset-passwor`,{
             method: "POST",
             headers : {
                 "Content-Type" : "application/json",

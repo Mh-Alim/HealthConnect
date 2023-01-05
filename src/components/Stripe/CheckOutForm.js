@@ -47,7 +47,7 @@ const CheckOutForm = ({price}) => {
   }, [stripe]);
 
   const takeAppointment  = async () =>{
-    const res = await fetch("/api/takeApt",{
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/takeApt`,{
       method: "GET",
       headers: {
         Accept : "application/json",
@@ -68,7 +68,7 @@ const CheckOutForm = ({price}) => {
     return res.status;
   }
   const deleteAppointment  = async () =>{
-    const res = await fetch("/api/deleteApp",{
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/deleteApp`,{
       method: "GET",
       headers: {
         Accept : "application/json",

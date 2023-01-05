@@ -24,7 +24,7 @@ const ForgotPassword = () => {
         
         const email = emailRef.current.value;
         console.log(email);
-        const res = await fetch("/api/forgot_password",{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/forgot_password`,{
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",
@@ -56,7 +56,7 @@ const ForgotPassword = () => {
 
       const otp = otpRef.current.value;
       const email = emailRef.current.value;
-      const res = await fetch("/api/otp",{
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/otp`,{
         method: "POST",
         headers: {
           "Content-Type":"application/json",

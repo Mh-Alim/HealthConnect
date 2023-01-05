@@ -20,7 +20,7 @@ const OTP = () => {
         e.preventDefault();
         const otp = otpRef.current.value;
         console.log(otp);
-        const res = await fetch("/api/otp",{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/otp`,{
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",

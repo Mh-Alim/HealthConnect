@@ -30,7 +30,7 @@ const Login = () => {
   const loginBtn = async(e) => {
     e.preventDefault();
 
-    const res = await fetch('/api/login',{
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/login`,{
       method: "POST",
       headers: {
         "Content-Type" : "application/json"

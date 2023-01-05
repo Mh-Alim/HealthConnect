@@ -18,7 +18,7 @@ const List = () => {
 
     const makeList = useCallback( async () => {
         try{
-            const resFromServer = await fetch("/api/list",{
+            const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/list`,{
                 method: "GET",
                 headers: {
                     "Content-Type" : "application/json",
@@ -47,7 +47,7 @@ const List = () => {
 
     // only for admin
     const deleteListHandler = async (appointment_id)=> {
-        const resFromServer = await fetch("/api/delList",{
+        const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/delList`,{
             method : "POST",
             headers: {
             "Content-Type" : "application/json"
@@ -66,7 +66,7 @@ const List = () => {
     // checking user or admin
 
     const userOrAdmin = useCallback( async ()=> {
-        const resFromServer = await fetch("/api/logedInUser",{
+        const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/logedInUser`,{
             method: "GET",
             headers: {
                 "Content-Type" : "application/json",

@@ -31,7 +31,7 @@ const Signup = () => {
       e.preventDefault();
       /// rm phone
       const {name,email,phone,password,cpassword} = user;
-      const res = await fetch("/api/register", {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/register`, {
         method : "POST",
         headers: {
           "Content-Type" : "application/json"

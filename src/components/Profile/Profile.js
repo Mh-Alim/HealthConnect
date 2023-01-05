@@ -14,7 +14,7 @@ const initial = useRef(false);
   const callAboutPage = useCallback( async () => {
     console.log("first render of profile")
     try{
-      const res = await fetch("/api/profile",{
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/profile`,{
         method: "GET",
         headers: {
           Accept : "application/json",

@@ -131,7 +131,7 @@ let initial = useRef(true);
   const submitReviewHandler = async (e) => {
     e.preventDefault();
     const review = reviewRef.current.value;
-    const res = await fetch("/api/review",{
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/review`,{
       method: "POST",
       headers: {
           "Content-Type" : "application/json",
