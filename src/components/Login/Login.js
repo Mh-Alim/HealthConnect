@@ -1,5 +1,5 @@
 
-import React,{ useState,useContext} from 'react';
+import React,{ useState,useContext, useRef} from 'react';
 import {useNavigate} from "react-router-dom"
 import "./Login.css"
 import {
@@ -16,10 +16,13 @@ from 'mdb-react-ui-kit';
 
 import { NavLink } from 'react-router-dom';
 import { userContext } from '../../App';
+import { ToastCallError, ToastCallSuccess } from '../../ReactToast';
+
 
 const Login = () => {
 
-  const {state,dispatch} = useContext(userContext)
+  const {state,dispatch} = useContext(userContext);
+  const loginRef  = useRef(null);
   // login codes
 
   const [email, setEmail] = useState('');
@@ -29,11 +32,14 @@ const Login = () => {
 
   const loginBtn = async(e) => {
     e.preventDefault();
+    console.log(loginRef.current);
+    loginRef.current.disabled = true;
 
     const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/login`,{
       method: "POST",
       headers: {
-        "Content-Type" : "application/json"
+        "Content-Type" : "application/json",
+        'Accept': 'application/json'
       },
       body : JSON.stringify({
         email,password
@@ -42,17 +48,18 @@ const Login = () => {
 
 
     const data = await res.json();
-
+    console.log(data);
     if(!data || res.status === 400){
-      window.alert("wrong credentials")
+      ToastCallError(data.error)
       console.log("Wrong credentials");
     }
 
     else {
       dispatch({type:"USER", payload : true});
-
+      ToastCallSuccess("login successfully")
       navigate("/");
     }
+    loginRef.current.disabled = false;
 
   }
   return (
@@ -74,7 +81,7 @@ const Login = () => {
               {/* <MDBBtn outline style={{backgroundColor: '#dd4b39'}} className='mx-2 px-5' color='black' size='lg'>
                 Login
               </MDBBtn> */}
-              <MDBBtn size='lg' type='submit' onClick={loginBtn} >
+              <MDBBtn size='lg' type='submit' ref={loginRef} onClick={loginBtn} >
                 Login
               </MDBBtn>
 

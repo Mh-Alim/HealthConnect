@@ -38,6 +38,7 @@ const ResetPassword = () => {
             method: "POST",
             headers : {
                 "Content-Type" : "application/json",
+                'Accept': 'application/json'
             },
             body: JSON.stringify({
                 email,pass,cpass

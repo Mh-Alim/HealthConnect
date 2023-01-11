@@ -52,6 +52,7 @@ const CheckOutForm = ({price}) => {
       headers: {
         Accept : "application/json",
         "Content-Type": "application/json",
+        'Accept': 'application/json'
       },
       credentials: 'include'
     })
@@ -71,7 +72,7 @@ const CheckOutForm = ({price}) => {
     const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/deleteApp`,{
       method: "GET",
       headers: {
-        Accept : "application/json",
+        "Accept" : "application/json",
         "Content-Type": "application/json",
       },
       credentials: 'include'

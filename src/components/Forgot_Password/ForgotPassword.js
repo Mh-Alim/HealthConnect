@@ -28,6 +28,7 @@ const ForgotPassword = () => {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json",
+                'Accept': 'application/json'
             },
             body: JSON.stringify({
                 email
@@ -60,6 +61,7 @@ const ForgotPassword = () => {
         method: "POST",
         headers: {
           "Content-Type":"application/json",
+          'Accept': 'application/json'
         },
         body:JSON.stringify({
           otp,email

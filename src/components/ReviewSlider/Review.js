@@ -135,6 +135,7 @@ let initial = useRef(true);
       method: "POST",
       headers: {
           "Content-Type" : "application/json",
+          'Accept': 'application/json'
       },
       body: JSON.stringify({
           review,revRating
@@ -171,6 +172,7 @@ let initial = useRef(true);
                 method: "GET",
                 headers: {
                     "Content-Type" : "application/json",
+                    'Accept': 'application/json'
                 }
                 
                 

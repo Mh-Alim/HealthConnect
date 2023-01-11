@@ -23,6 +23,8 @@ import { initialState, reducer } from './reducer/UserReducer';
 import AptList from './components/Appointment_List/AptList';
 import Stripe from './components/Stripe/Stripe';
 import SuccessPage from './components/Stripe/SuccessPageStripe';
+import { ToastContainerError, ToastContainerSuccess } from './ReactToast';
+
 
 export const userContext = createContext();
 function App() {
@@ -69,6 +71,9 @@ function App() {
               {/* <Review /> */}
     
               {/* <Footer /> */}
+
+              {ToastContainerSuccess}
+              {ToastContainerError}
     </>
   );
 }

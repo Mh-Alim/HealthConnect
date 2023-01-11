@@ -1,5 +1,6 @@
 import React,{useRef} from 'react'
 import {useNavigate} from "react-router-dom"
+import { ToastCallSuccess } from '../../ReactToast';
 import "./Appoint.css"
 
 // eslint-disable-next-line
@@ -49,7 +50,8 @@ const Appoint = () => {
       const resFromServer = await fetch("/api/appointment", {
         method : "POST",
         headers: {
-          "Content-Type" : "application/json"
+          "Content-Type" : "application/json",
+          'Accept': 'application/json'
         },
         body : JSON.stringify({
           name,
@@ -71,16 +73,16 @@ const Appoint = () => {
       console.log("here1")
       if(resFromServer.status === 401){
         console.log("401 status me gadbad");
-        window.alert(resFromServerInJson.message);
+        ToastCallSuccess(resFromServerInJson.message);
         console.log(resFromServerInJson);
       }
       else if(resFromServer.status === 422 || !resFromServer){
         // window.alert("login before appointment");
-        window.alert(resFromServerInJson.message);
+        ToastCallSuccess(resFromServerInJson.message);
         console.log(resFromServerInJson.message);
       }
       else {
-        window.alert("Pay Your Fee");
+        ToastCallSuccess("Pay Your Fee");
         console.log("PAY");
         // navigate to payment option 
         navigate("/stripe",{

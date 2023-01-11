@@ -34,7 +34,8 @@ const Signup = () => {
       const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/register`, {
         method : "POST",
         headers: {
-          "Content-Type" : "application/json"
+          "Content-Type" : "application/json",
+          'Accept': 'application/json'
         },
         body : JSON.stringify({
 

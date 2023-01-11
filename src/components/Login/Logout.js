@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect , useRef, useContext, } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { userContext } from '../../App'
+import { ToastCallError, ToastCallSuccess } from '../../ReactToast'
 
 const Logout = () => {
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ const Logout = () => {
         const res = await fetch("/api/logout",{
           method: "GET",
           headers: {
-            Accept : "application/json",
+            'Accept' : "application/json",
             "Content-Type": "application/json",
           },
           credentials: 'include'
@@ -22,11 +23,11 @@ const Logout = () => {
         
         const data = await res.json();
         if(res.status !== 201){
-            alert("You are not logged in yet");
+            ToastCallError("You are not logged in yet");
         }
         else {
             dispatch({type:"USER",payload: false})
-            alert(data.message);
+            ToastCallSuccess(data.message)
             navigate("/login");
         }
         

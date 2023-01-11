@@ -17,7 +17,7 @@ const initial = useRef(false);
       const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/profile`,{
         method: "GET",
         headers: {
-          Accept : "application/json",
+          "Accept" : "application/json",
           "Content-Type": "application/json",
         },
         credentials: 'include'

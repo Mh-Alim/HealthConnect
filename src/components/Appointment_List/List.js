@@ -4,6 +4,7 @@ import "./List.css"
 import userImg from "../../images/user.jpg"
 import Search from './Search'
 import AptList from './AptList'
+import { ToastCallSuccess } from '../../ReactToast'
 
 
 
@@ -22,6 +23,7 @@ const List = () => {
                 method: "GET",
                 headers: {
                     "Content-Type" : "application/json",
+                    'Accept': 'application/json'
                 }
                 
                 
@@ -50,7 +52,8 @@ const List = () => {
         const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/delList`,{
             method : "POST",
             headers: {
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json",
+            'Accept': 'application/json'
             },
             body : JSON.stringify({
                 appointment_id
@@ -59,7 +62,7 @@ const List = () => {
         });
 
         const resInJson = await resFromServer.json();
-        alert(resInJson.message);
+        ToastCallSuccess(resInJson.message);
         
     }
 
@@ -70,6 +73,7 @@ const List = () => {
             method: "GET",
             headers: {
                 "Content-Type" : "application/json",
+                'Accept': 'application/json'
             }
             
             

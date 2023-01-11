@@ -4,6 +4,7 @@ import { searchContext } from './AptList';
 import userImg from "../../images/user.jpg"
 import "./List.css"
 import { useNavigate } from 'react-router-dom';
+import { ToastCallSuccess } from '../../ReactToast';
 
 
 const Search = () => {
@@ -26,7 +27,8 @@ const Search = () => {
         const res = await fetch("/api/search", {
           method : "POST",
           headers: {
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json",
+            'Accept': 'application/json'
           },
           body : JSON.stringify({
             search_text
@@ -50,7 +52,8 @@ const Search = () => {
       const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/delList`,{
           method : "POST",
           headers: {
-          "Content-Type" : "application/json"
+          "Content-Type" : "application/json",
+          'Accept': 'application/json'
           },
           body : JSON.stringify({
               appointment_id
@@ -60,7 +63,7 @@ const Search = () => {
 
       const resInJson = await resFromServer.json();
       
-      alert(resInJson.message);
+      ToastCallSuccess(resInJson.message);
       
   }
 
@@ -71,6 +74,7 @@ const Search = () => {
         method: "GET",
         headers: {
             "Content-Type" : "application/json",
+            'Accept': 'application/json'
         }
         
         
