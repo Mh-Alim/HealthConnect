@@ -33,6 +33,7 @@ const Signup = () => {
       const {name,email,phone,password,cpassword} = user;
       const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/register`, {
         method : "POST",
+        credentials : "include",
         headers: {
           "Content-Type" : "application/json",
           'Accept': 'application/json'

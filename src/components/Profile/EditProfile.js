@@ -24,6 +24,7 @@ const EditProfile = () => {
 
       const res = await fetch("/api/profile",{
         method: "GET",
+        credentials : "include",
         headers: {
           "Content-Type": "application/json",
         }
@@ -67,6 +68,7 @@ const EditProfile = () => {
       const {name,phone,address,height,weight,dob} = userData;
       const res = await fetch("/api/editProfile", {
         method : "POST",
+        credentials : "include",
         headers: {
           "Content-Type" : "application/json",
           'Accept': 'application/json'

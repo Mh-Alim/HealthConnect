@@ -26,6 +26,7 @@ const ForgotPassword = () => {
         console.log(email);
         const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/forgot_password`,{
             method: "POST",
+            credentials : "include",
             headers: {
                 "Content-Type" : "application/json",
                 'Accept': 'application/json'

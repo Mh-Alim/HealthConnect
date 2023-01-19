@@ -21,6 +21,7 @@ const List = () => {
         try{
             const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/list`,{
                 method: "GET",
+                credentials : "include",
                 headers: {
                     "Content-Type" : "application/json",
                     'Accept': 'application/json'
@@ -51,6 +52,7 @@ const List = () => {
     const deleteListHandler = async (appointment_id)=> {
         const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/delList`,{
             method : "POST",
+            credentials : "include",
             headers: {
             "Content-Type" : "application/json",
             'Accept': 'application/json'
@@ -71,6 +73,7 @@ const List = () => {
     const userOrAdmin = useCallback( async ()=> {
         const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/logedInUser`,{
             method: "GET",
+            credentials : "include",
             headers: {
                 "Content-Type" : "application/json",
                 'Accept': 'application/json'

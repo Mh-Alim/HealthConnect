@@ -133,6 +133,7 @@ let initial = useRef(true);
     const review = reviewRef.current.value;
     const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/review`,{
       method: "POST",
+      credentials : "include",
       headers: {
           "Content-Type" : "application/json",
           'Accept': 'application/json'
@@ -170,6 +171,7 @@ let initial = useRef(true);
 
             const resFromServer = await fetch("/api/reviews",{
                 method: "GET",
+                credentials : "include",
                 headers: {
                     "Content-Type" : "application/json",
                     'Accept': 'application/json'

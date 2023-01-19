@@ -37,10 +37,10 @@ const Login = () => {
 
     const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/login`,{
       method: "POST",
-      headers: {
-        "Content-Type" : "application/json",
-        'Accept': 'application/json'
-      },
+      credentials : "include",
+      headers:{
+        "Content-Type":"application/json"
+      } ,
       body : JSON.stringify({
         email,password
       })

@@ -22,6 +22,7 @@ const Stripe = () => {
         // Create PaymentIntent as soon as the page loads
         fetch(`${process.env.REACT_APP_BACKEND_URL}/api/create-payment-intent`, {
           method: "POST",
+          credentials : "include",
           headers: { "Content-Type": "application/json",'Accept': 'application/json' },
           body: JSON.stringify({ 
              id : location.state.user_id

@@ -45,6 +45,7 @@ const Navbar = () => {
   
     const resFromServer = await fetch("/api/login_check",{
         method: "GET",
+        credentials : "include",
         headers: {
             "Content-Type" : "application/json",
             'Accept': 'application/json'

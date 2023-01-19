@@ -49,6 +49,7 @@ const Appoint = () => {
 
       const resFromServer = await fetch("/api/appointment", {
         method : "POST",
+        credentials : "include",
         headers: {
           "Content-Type" : "application/json",
           'Accept': 'application/json'

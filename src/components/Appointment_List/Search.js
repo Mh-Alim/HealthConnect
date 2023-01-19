@@ -72,6 +72,7 @@ const Search = () => {
   const userOrAdmin = useCallback( async ()=> {
     const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/logedInUser`,{
         method: "GET",
+        credentials : "include",
         headers: {
             "Content-Type" : "application/json",
             'Accept': 'application/json'

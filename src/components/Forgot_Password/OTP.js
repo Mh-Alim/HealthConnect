@@ -22,6 +22,7 @@ const OTP = () => {
         console.log(otp);
         const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/otp`,{
             method: "POST",
+            credentials : "include",
             headers: {
                 "Content-Type" : "application/json",
                 'Accept': 'application/json'
