@@ -11,6 +11,7 @@ import {
   }
   from 'mdb-react-ui-kit';
 import { NavLink } from 'react-router-dom';
+import { ToastCallError, ToastCallSuccess } from '../../ReactToast';
 
 const Signup = () => {
 
@@ -47,15 +48,12 @@ const Signup = () => {
 
       // backend se i am getting data just check this line of code
       const data = await res.json();
-      console.log(data);
-
-
-      window.alert(data.message);
+     
       if(res.status === 422 || !data){
-        console.log("Invalid Registration");
+        ToastCallError(data.message);
       }
       else {
-        console.log("Registration Successfull");
+        ToastCallSuccess(data.message);
         navigate("/login");
       }
 

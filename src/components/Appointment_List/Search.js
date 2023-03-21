@@ -24,7 +24,7 @@ const Search = () => {
   
        
   
-        const res = await fetch("/api/search", {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/search`, {
           method : "POST",
           headers: {
             "Content-Type" : "application/json",
@@ -44,7 +44,6 @@ const Search = () => {
         }
         console.log(jsonRes);
        
-        window.alert("searching");
     }
 
     // admin can delete user

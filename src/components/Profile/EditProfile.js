@@ -22,7 +22,7 @@ const EditProfile = () => {
     
     try{
 
-      const res = await fetch("/api/profile",{
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/profile`,{
         method: "GET",
         credentials : "include",
         headers: {
@@ -66,7 +66,7 @@ const EditProfile = () => {
       e.preventDefault();
       // email, password,
       const {name,phone,address,height,weight,dob} = userData;
-      const res = await fetch("/api/editProfile", {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/editProfile`, {
         method : "POST",
         credentials : "include",
         headers: {

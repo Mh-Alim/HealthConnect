@@ -43,7 +43,7 @@ const Navbar = () => {
  
   const InitialStateFun = useCallback( async () => {
   
-    const resFromServer = await fetch("/api/login_check",{
+    const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/login_check`,{
         method: "GET",
         credentials : "include",
         headers: {

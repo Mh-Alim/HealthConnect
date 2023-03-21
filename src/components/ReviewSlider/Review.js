@@ -14,6 +14,7 @@ import {
 import "./Review.css"
 import image from "../../images/user.jpg"
 import { userContext } from '../../App';
+import { ToastCallError, ToastCallSuccess } from '../../ReactToast';
 
 // card stars 
 
@@ -154,9 +155,10 @@ let initial = useRef(true);
 
     if(res.status === 200){
       reviewRef.current.value = '';
+      ToastCallSuccess(resFromServerInJson.message)
       // setMyEmail(resFromServerInJson.email);
     }
-    window.alert(resFromServerInJson.message);
+    else ToastCallError(resFromServerInJson.message);
   }
 
 
@@ -169,7 +171,7 @@ let initial = useRef(true);
       console.log("userReviews")
         try{
 
-            const resFromServer = await fetch("/api/reviews",{
+            const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/reviews`,{
                 method: "GET",
                 credentials : "include",
                 headers: {

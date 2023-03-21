@@ -10,10 +10,13 @@ import {
   from 'mdb-react-ui-kit';
 // import { NavLink } from 'react-router-dom';
 import "./ForgotPassword.css"
+import {ToastCallError,ToastCallSuccess} from "../../ReactToast"
 
 const ForgotPassword = () => {
 
     const emailRef = useRef("");
+    const btn1 = useRef(null);
+    const btn2 = useRef(null);
     
     const [otpDisplay, setOtpDisplay] = useState(false);
     const otpRef = useRef("");
@@ -21,7 +24,7 @@ const ForgotPassword = () => {
 
     const handleClick = async (e) => {
         e.preventDefault();
-        
+        btn1.current.disabled = true;
         const email = emailRef.current.value;
         console.log(email);
         const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/forgot_password`,{
@@ -36,26 +39,23 @@ const ForgotPassword = () => {
             })
         })
       // console.log("after res")
-        const resFromServerInJson = await res.json();
-        console.log("json res in handleclick fun "+resFromServerInJson.message);
+        const jsonRes = await res.json();
         if(res.status === 200){
-          window.alert(resFromServerInJson.message);
+          
+          ToastCallSuccess(jsonRes.message);
           setOtpDisplay(true);
         }
 
 
-        else window.alert(resFromServerInJson.message);
-
-
-        
-        
+        else ToastCallError(jsonRes.message);
+        btn1.current.disabled = false;
     }
 
 
 
     const otpHandleClick = async (e)=> {
       e.preventDefault();
-
+      btn2.current.disabled = true;
       const otp = otpRef.current.value;
       const email = emailRef.current.value;
       const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/otp`,{
@@ -71,11 +71,12 @@ const ForgotPassword = () => {
 
       const resFromServerInJson = await res.json();
       if(res.status === 200){
-        window.alert(resFromServerInJson.message);
+        ToastCallSuccess(resFromServerInJson.message);
         navigate("/reset-password",{state:{email}});
       }
       
-      else window.alert(resFromServerInJson.message);
+      else ToastCallError(resFromServerInJson.message);
+      btn2.current.disabled = false;
     }
   return (
     <MDBContainer id='for_pass_container' fluid className='d-flex align-items-center justify-content-center bg-image ' >
@@ -85,13 +86,13 @@ const ForgotPassword = () => {
           <h2 className="signup-heading text-uppercase text-center mb-5">Forgot Password</h2>
           <MDBInput wrapperClass='mb-4' label='Your Email' size='lg' inputRef={emailRef} id='form3' name='email' type='email'  />
          
-          <MDBBtn className='mb-4 w-100 gradient-custom-4' type='submit'  size='lg' onClick={handleClick}>Enter</MDBBtn>
+          <MDBBtn ref={btn1} className='mb-4 w-100 gradient-custom-4' type='submit'  size='lg' onClick={handleClick}>Enter</MDBBtn>
         </MDBCardBody>
         <MDBCardBody style={{display: otpDisplay?"block":"none"}} className='px-5' >
           <h2  id='otp' className=" text-uppercase text-center mb-5">OTP</h2>
           <MDBInput wrapperClass='mb-4' label='Your OTP' size='lg' inputRef={otpRef} id='form3' name='otp' type='text'  />
          
-          <MDBBtn className='mb-4 w-100 gradient-custom-4' type='submit'  size='lg' onClick={otpHandleClick}>Enter</MDBBtn>
+          <MDBBtn ref={btn2} className='mb-4 w-100 gradient-custom-4' type='submit'  size='lg' onClick={otpHandleClick}>Enter</MDBBtn>
         </MDBCardBody>
       </MDBCard>
     </MDBContainer>

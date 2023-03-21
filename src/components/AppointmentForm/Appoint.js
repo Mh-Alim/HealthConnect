@@ -47,7 +47,7 @@ const Appoint = () => {
 
      
 
-      const resFromServer = await fetch("/api/appointment", {
+      const resFromServer = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/appointment`, {
         method : "POST",
         credentials : "include",
         headers: {

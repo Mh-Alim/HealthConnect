@@ -11,7 +11,7 @@ const Logout = () => {
   const initial = useRef(false);
   const logoutCall = async() => {
     try{
-        const res = await fetch("/api/logout",{
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/logout`,{
           method: "GET",
           credentials : "include",
           headers: {

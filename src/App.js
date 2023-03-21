@@ -33,47 +33,50 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <>
-
-              
-            <userContext.Provider value={{state,dispatch}} >
-
-            
-
-            {/* <Back1 />
+      <userContext.Provider value={{ state, dispatch }}>
+        {/* <Back1 />
             <Back2 />
             <WorkingProcess/> */}
 
-              <Navbar/>
-              <Routes>
-                <Route exact path='/' element={
-                <><Back1 /> <Back2 /> <WorkingProcess />  <Appoint /> <HomeReview/> </>} 
-                /> 
-                <Route exact path='/Home' element = {<Back1 />} /> 
-                <Route exact path='/about' element = {<Back2 />} /> 
-                <Route exact path='/workProcess' element = {<WorkingProcess />} /> 
-                <Route exact path='/signup' element = { <Signup /> } /> 
-                <Route exact path='/appointment' element = { <Appoint /> } /> 
-                <Route exact path='/login' element = { <Login />  } />
-                <Route exact path='/review' element = { <Review />  } />
-                <Route exact path='/profile' element = { <Profile />  } />
-                <Route exact path='/lists' element = { <AptList />  } />
-                <Route exact path='/editprofile' element = { <EditProfile />  } />
-                <Route exact path='/forgot_password' element = { <ForgotPassword />  } />
-                <Route exact path='/reset-password' element = { <ResetPassword />  } />
-                <Route exact path='/otp' element = { <OTP />  } />
-                <Route exact path='/logout' element = { <Logout />  } />
-                <Route exact path='/stripe' element = { <Stripe />  } />
-                <Route exact path='/payment-success' element = { <SuccessPage />  } />
-                <Route element= {<Error/>} />
-              </Routes>
+        <Navbar />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Back1 /> <Back2 /> <WorkingProcess /> <Appoint />{" "}
+                <HomeReview />{" "}
+              </>
+            }
+          />
+          <Route exact path="/Home" element={<Back1 />} />
+          <Route exact path="/about" element={<Back2 />} />
+          <Route exact path="/workProcess" element={<WorkingProcess />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/appointment" element={<Appoint />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/review" element={<Review />} />
+          <Route exact path="/profile" element={<Profile />} />
 
-              </userContext.Provider>
-              {/* <Review /> */}
-    
-              {/* <Footer /> */}
+          <Route exact path="/profilexy" element={<Profile />} />
+          <Route exact path="/lists" element={<AptList />} />
+          <Route exact path="/editprofile" element={<EditProfile />} />
+          <Route exact path="/forgot_password" element={<ForgotPassword />} />
+          <Route exact path="/reset-password" element={<ResetPassword />} />
+          <Route exact path="/otp" element={<OTP />} />
+          <Route exact path="/logout" element={<Logout />} />
+          <Route exact path="/stripe" element={<Stripe />} />
+          <Route exact path="/payment-success" element={<SuccessPage />} />
+          <Route element={<Error />} />
+        </Routes>
+      </userContext.Provider>
+      {/* <Review /> */}
 
-              {ToastContainerSuccess}
-              {ToastContainerError}
+      {/* <Footer /> */}
+
+      {ToastContainerSuccess}
+      {ToastContainerError}
     </>
   );
 }
