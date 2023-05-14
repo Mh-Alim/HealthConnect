@@ -103,7 +103,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 .stars{
     /* width: 300px; */
     padding: 0;
-    height: 100px;
+    height: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,6 +133,20 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 
 .reviewHandleBtn{
     width: 25%;
+}
+.review_para::-webkit-scrollbar{
+    width: 0.3vw;
+    background-color: var(--indigo);
+}
+.review_para::-webkit-scrollbar-thumb{
+    background-color: white; 
+    border-radius: 5px;
+    
+}
+
+.review_para {
+    height: 20vh;
+    overflow-y: scroll;
 }
 
 #review{
