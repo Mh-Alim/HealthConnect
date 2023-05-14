@@ -12,10 +12,23 @@ const Back1 = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  function getString(str) {
+    let len = str.length
+    let res;
+    for (let i = 0; i < len; i++) {
+      if (str[i] === '&') {
+        res = str.substring(0, i);
+        break;
+      }
+    }
+    return res;
+  }
   useEffect(() => {
     const state = location.search.substring(1);
     console.log(state);
-    if (state === "payment-success") {
+    let s = getString(state)
+    console.log("string",s);
+    if (s === "payment-success") {
       navigate("/payment-success");
     }
   },[])
