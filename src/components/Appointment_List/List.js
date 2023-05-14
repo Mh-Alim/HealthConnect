@@ -87,6 +87,8 @@ const List = () => {
     
     },[logedInUser]);
 
+
+    // to removed reder twice
     let initial = useRef(true);
     useEffect(() => {
       if(initial.current === true){
