@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Back1.css'
 import drImg from '../../images/bg1/drImg1.png'
 import Tilt from 'react-parallax-tilt';
 import shape from '../../images/bg1/shape.png'
 import sq from '../../images/bg1/square.png'
 import plus from '../../images/bg1/plus.png'
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Back1 = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const state = location.search.substring(1);
+    console.log(state);
+    if (state === "payment-success") {
+      navigate("/payment-success");
+    }
+  },[])
   return (
     <>
         <div className="bg1">

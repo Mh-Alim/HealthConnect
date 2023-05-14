@@ -106,7 +106,7 @@ const CheckOutForm = ({price}) => {
         elements,
         confirmParams: {
           // Make sure to change this to your payment completion page
-          return_url: `/payment-success`,
+          return_url: `${process.env.REACT_APP_BACKEND_URL}?payment-success`,
         },
       });
   
