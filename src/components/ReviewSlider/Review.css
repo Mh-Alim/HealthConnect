@@ -13,8 +13,8 @@
 .testimonials {
     
     padding: 40px 0;
-    background-color: var(--indigo);
     color: #fff;
+    color: black ;
     
     text-align: center;
 }
@@ -88,10 +88,13 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 #reviewStyle{
-    background: var(--indigo);
+    border: 1px solid var(--indigo);
 }
+.form-outline.form-white .form-control {
+    color: black;
+    border: 0.8px solid black;
 
-
+}
 
 .star-rating{
     display: flex;
@@ -147,10 +150,6 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 .review_para {
     height: 20vh;
     overflow-y: scroll;
-}
-
-#review{
-    height: 6rem;
 }
 
 @media screen and (max-width: 800px) {

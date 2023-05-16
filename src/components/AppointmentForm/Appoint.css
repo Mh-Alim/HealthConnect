@@ -1,3 +1,7 @@
+#apt {
+    background-color: var(--indigo);
+    padding: 2rem 0;
+}
 
 .outer-part-appointment .form{
     background: rgba( 255, 255, 255, 0.25 );
@@ -22,8 +26,10 @@
     padding-left: 2rem;
     padding-right: 2rem;
     font-weight: 1000;
-    color: #1f2278;;
+    color: white;
+
     font-size: 3rem;
+    padding-bottom: 2rem;
 }
 
 .outer-part-appointment{

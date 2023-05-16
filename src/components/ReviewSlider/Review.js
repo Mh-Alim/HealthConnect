@@ -12,7 +12,7 @@ import {
   from 'mdb-react-ui-kit';
 // import { NavLink } from 'react-router-dom';
 import "./Review.css"
-import image from "../../images/user.jpg"
+import image from "../../images/default_user.png"
 import { userContext } from '../../App';
 import { ToastCallError, ToastCallSuccess } from '../../ReactToast';
 
@@ -152,8 +152,8 @@ let initial = useRef(true);
     if(ind < revRating) elem.classList.remove("orangeRev");
    })
 
-
-    if(res.status === 200){
+   console.log( "res status in review ",res.status);
+    if(res.status === 201){
       reviewRef.current.value = '';
       ToastCallSuccess(resFromServerInJson.message)
       // setMyEmail(resFromServerInJson.email);

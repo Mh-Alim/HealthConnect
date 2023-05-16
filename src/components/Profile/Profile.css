@@ -6,6 +6,9 @@
     padding-right: 1rem;
     margin-bottom: 6rem;
     /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .innerProfile{
@@ -131,10 +134,6 @@
     .profileImg{
         width: 7rem;
     }  
-    #Profile{
-        padding-left: 25vw;
-        padding-right: 25vw;
-    }
 }
 
 /* .contentBasicInfo{

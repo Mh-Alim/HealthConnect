@@ -1,7 +1,7 @@
 import React,{useEffect,useRef,useState,useCallback} from 'react'
 import { useNavigate } from 'react-router-dom'
 import "./List.css"
-import userImg from "../../images/user.jpg"
+import userImg from "../../images/default_user.png"
 import Search from './Search'
 import AptList from './AptList'
 import { ToastCallSuccess } from '../../ReactToast'

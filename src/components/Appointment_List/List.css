@@ -3,9 +3,10 @@
     padding-left: 4rem;
     padding-right: 4rem;
     padding-bottom: 6rem;
-    background: var(--indigo);
+    background: white;
     min-height: 100vh;
     font-family: 'Poppins',sans-serif;
+    color: black;
 
 }
 
@@ -21,7 +22,6 @@
 
 .cp{
     margin: 0;
-    color: var(--white-text-color);
     display: flex;
     align-items: center;
 
@@ -74,6 +74,7 @@
 .Search .input-group{
     align-items: center;
     border: none;
+    margin-top: 3rem;
 }
 .Search > .input-group > .btn{
     border-radius: 0;
@@ -139,6 +140,6 @@
 }
 
 #deleteList{
-    color: #fff;
+    color: green;
     cursor: pointer;
 }

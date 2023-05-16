@@ -1,35 +1,32 @@
-import './App.css';
-import Back1 from './components/Firstbg/Back1';
-import Navbar from './components/Navbar/Navbar';
-import Back2 from './components/SecBg/Back2';
-import WorkingProcess from './components/WorkingProcess/WorkingProcess';
-import {Route,Routes} from "react-router-dom"
-import Appoint from './components/AppointmentForm/Appoint';
+import "./App.css";
+import Back1 from "./components/Firstbg/Back1";
+import Navbar from "./components/Navbar/Navbar";
+import Back2 from "./components/SecBg/Back2";
+import WorkingProcess from "./components/WorkingProcess/WorkingProcess";
+import { Route, Routes } from "react-router-dom";
+import Appoint from "./components/AppointmentForm/Appoint";
 // import Footer from './components/Footer/Footer';
-import Signup from './components/Signup/Signup.js';
-import Login from './components/Login/Login';
-import Error from './components/ErrorPage/Error';
-import Review from './components/ReviewSlider/Review';
-import HomeReview from './components/ReviewSlider/HomeReview';
-import Profile from './components/Profile/Profile';
-import List from './components/Appointment_List/List';
-import EditProfile from './components/Profile/EditProfile';
-import ForgotPassword from './components/Forgot_Password/ForgotPassword';
-import OTP from './components/Forgot_Password/OTP';
-import ResetPassword from './components/Forgot_Password/ResetPassword';
-import Logout from './components/Login/Logout';
-import { createContext , useReducer, useEffect} from 'react';
-import { initialState, reducer } from './reducer/UserReducer';
-import AptList from './components/Appointment_List/AptList';
-import Stripe from './components/Stripe/Stripe';
-import SuccessPage from './components/Stripe/SuccessPageStripe';
-import { ToastContainerError, ToastContainerSuccess } from './ReactToast';
-
+import Signup from "./components/Signup/Signup.js";
+import Login from "./components/Login/Login";
+import Error from "./components/ErrorPage/Error";
+import Review from "./components/ReviewSlider/Review";
+import HomeReview from "./components/ReviewSlider/HomeReview";
+import Profile from "./components/Profile/Profile";
+import List from "./components/Appointment_List/List";
+import EditProfile from "./components/Profile/EditProfile";
+import ForgotPassword from "./components/Forgot_Password/ForgotPassword";
+import OTP from "./components/Forgot_Password/OTP";
+import ResetPassword from "./components/Forgot_Password/ResetPassword";
+import Logout from "./components/Login/Logout";
+import { createContext, useReducer, useEffect } from "react";
+import { initialState, reducer } from "./reducer/UserReducer";
+import AptList from "./components/Appointment_List/AptList";
+import Stripe from "./components/Stripe/Stripe";
+import SuccessPage from "./components/Stripe/SuccessPageStripe";
+import { ToastContainerError, ToastContainerSuccess } from "./ReactToast";
 
 export const userContext = createContext();
 function App() {
-  
-  
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <>
@@ -45,8 +42,8 @@ function App() {
             path="/"
             element={
               <>
-                <Back1 /> <Back2 /> <WorkingProcess /> <Appoint />{" "}
-                <HomeReview />{" "}
+                <Back1 /> <Back2 /> <WorkingProcess /> <HomeReview />{" "}
+                <Appoint />{" "}
               </>
             }
           />

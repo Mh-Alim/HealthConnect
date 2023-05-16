@@ -116,7 +116,7 @@ const EditProfile = () => {
               name="name"
               id="form1"
               type="text"
-              value={userData.name}
+              value={userData && userData.name}
               onChange={handleChange}
             />
             <MDBInput
@@ -136,6 +136,7 @@ const EditProfile = () => {
               id="form2"
               type="number"
               onChange={handleChange}
+              value={userData && userData.details && userData.details.height}
             />
             <MDBInput
               wrapperClass="mb-4"
@@ -145,6 +146,7 @@ const EditProfile = () => {
               id="form2"
               type="number"
               onChange={handleChange}
+              value={userData && userData.details && userData.details.weight}
             />
             <MDBInput
               wrapperClass="mb-4"
@@ -153,7 +155,7 @@ const EditProfile = () => {
               size="lg"
               id="form2"
               type="tel"
-              value={userData.phone}
+              value={userData && userData.phone}
               onChange={handleChange}
             />
             {/* <MDBInput wrapperclassName='mb-4' label='Your Email' size='lg' name='email' id='form2' type='email' value={userData.email}/> */}
@@ -164,7 +166,7 @@ const EditProfile = () => {
               name="address"
               id="form4"
               type="text"
-              value={userData.details}
+              value={userData && userData.details && userData.details.address}
               onChange={handleChange}
             />
             {/* <div className='d-flex flex-row justify-content-center mb-4'>

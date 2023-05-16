@@ -94,7 +94,7 @@ const Appoint = () => {
       }
   }
   return (
-
+    <div id="apt" >
     <div className="outer-part-appointment">
       <h1 className='heading'>Appointment Form</h1>
       <form className="row g-3 form">
@@ -172,7 +172,7 @@ const Appoint = () => {
           <button id='apt_btn' type="submit" className="btn btn-primary" onClick={submitAppointment}>Appointment</button>
         </div>
       </form>
-
+      </div>
     </div>
   );
 }
