@@ -3,36 +3,30 @@ import React, { useCallback, useContext, useEffect } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/bg1/hospital-logo.png";
-import $ from "jquery";
 import { userContext } from "../../App";
 
 function hamburger() {
-  let d = document.getElementById("navText");
-  d.style.display = d.style.display === "block" ? "none" : "block";
+  if (window.innerWidth <= 900) {
+    let d = document.getElementById("navText");
+    d.style.display = d.style.display === "block" ? "none" : "block";
 
-  let nav = document.getElementById("navbar");
-  if (nav.style.height === "100vh") {
-    if (window.innerWidth <= 400) {
-      nav.style.height = "3rem";
+    let nav = document.getElementById("navbar");
+    if (nav.style.height === "100vh") {
+      if (window.innerWidth <= 400) {
+        nav.style.height = "3rem";
+      } else {
+        nav.style.height = "10vh";
+      }
+      nav.style.background = "transparent";
     } else {
-      nav.style.height = "10vh";
+      nav.style.height = "100vh";
+      nav.style.background = "none";
     }
-    nav.style.background = "transparent";
-  } else {
-    nav.style.height = "100vh";
-    nav.style.background = "none";
+
+    const ele = document.getElementById("nav-hamburger");
+    ele.classList.toggle("open");
   }
-
-  const ele = document.getElementById("nav-hamburger")
-  ele.classList.toggle("open")
-  // $(document).ready(function () {
-  //   $("#nav-hamburger").click(function () {
-  //     $(this).toggleClass("open");
-  //   });
-  // });
 }
-
-
 
 const Navbar = () => {
   const { state, dispatch } = useContext(userContext);
