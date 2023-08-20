@@ -149,6 +149,7 @@ body{
 
     #navText{
       display: none;
+      margin-top: 12rem;
     }
    
     .mid{
@@ -156,7 +157,7 @@ body{
     }
     .navComponents{
       margin: 5vw 0vw;
-      font-size: 2em;
+      font-size: 1rem;
     }
     #about{
       margin-top: 4vh;

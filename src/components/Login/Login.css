@@ -22,5 +22,12 @@
     padding-right: calc(var(--mdb-gutter-x) * 0.5);
     padding-left: calc(var(--mdb-gutter-x) * 0.5);
     margin-top: var(--mdb-gutter-y);
-    background: #fbfbfbb0
+    background: #fbfbfbb0;
+}
+
+
+@media screen and (max-width : 600px) {
+    .login-background .card {
+        margin-bottom: 14rem !important;
+    }
 }
